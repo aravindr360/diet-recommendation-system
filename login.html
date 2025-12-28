@@ -1,0 +1,78 @@
+//login.html
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login | Diet Recommender</title>
+</head>
+<body>
+
+<h2>Login</h2>
+<input id="loginUser" placeholder="Username">
+<input id="loginPass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<hr>
+
+<h2>Register</h2>
+<input id="regUser" placeholder="Username">
+<input id="regPass" type="password" placeholder="Password">
+<input id="regAge" placeholder="Age">
+<input id="regGender" placeholder="Gender">
+<input id="regDisease" placeholder="Disease">
+<input id="regPref" placeholder="Preferences">
+<button onclick="register()">Register</button>
+
+<script>
+function register() {
+  fetch("/register", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      username: document.getElementById("regUser").value,
+      password: document.getElementById("regPass").value,
+      age: document.getElementById("regAge").value,
+      gender: document.getElementById("regGender").value,
+      disease: document.getElementById("regDisease").value,
+      preferences: document.getElementById("regPref").value
+    })
+  })
+  .then(async res => {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(text);
+  }
+})
+
+  .then(data => {
+    alert(JSON.stringify(data));
+  })
+  .catch(err => alert("Error: " + err));
+}
+
+function login() {
+  fetch("/login", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      username: document.getElementById("loginUser").value,
+      password: document.getElementById("loginPass").value
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      window.location.href = "/";
+    } else {
+      alert(data.error);
+    }
+  });
+}
+</script>
+
+</body>
+</html>
+

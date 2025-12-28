@@ -1,0 +1,26 @@
+Food_Name,Energy,Protein,Carbohydrate,Fat
+Idli,58,2.0,12,0.4
+Dosa,168,4.0,28,3.7
+Chapati,120,3.5,18,3.0
+Poha,180,3.0,36,2.5
+Sambar,76,4.0,10,2.0
+Curd,61,3.1,4.7,3.3
+Dal,104,7.0,18,0.8
+Vegetable Curry,90,2.5,10,4.0
+Fish Curry,140,20,5,5.0
+Chicken Curry,190,22,4,7.5
+Rice Gruel (Kanji),40,0.8,8.0,0.1
+Vegetable Upma,210,5.0,35.0,5.0
+Masala Dosa,250,6.0,38.0,8.0
+Plain Rice (Cooked),130,2.7,28.0,0.3
+Lemon Rice,210,4.0,36.0,6.0
+Curd Rice,170,4.0,28.0,4.5
+Vegetable Pulao,230,5.5,40.0,6.0
+Rajma Curry,140,9.0,22.0,3.0
+Chole Curry,160,8.5,24.0,4.0
+Vegetable Khichdi,150,6.0,25.0,3.5
+Palak Paneer,220,11.0,8.0,16.0
+Egg Curry,180,12.0,6.0,12.0
+Fish Fry (Shallow),220,24.0,2.0,12.0
+Chicken Fry,260,26.0,3.0,18.0
+Vegetable Stir Fry,120,3.0,14.0,5.0

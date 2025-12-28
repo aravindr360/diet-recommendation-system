@@ -1,0 +1,23 @@
+{
+    "aravind": {
+        "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+        "age": "18",
+        "gender": "male",
+        "disease": "CVD",
+        "preferences": ""
+    },
+    "rahul": {
+        "password": "c33f4b24f37e2ebe0423a5dbbc1a0b18acf9361ae40189d7b825c2609758149b",
+        "age": "",
+        "gender": "",
+        "disease": "",
+        "preferences": ""
+    },
+    "devika": {
+        "password": "0f1fe896d54eb10b132b7b49502cdc14df7302398b1a1550e7b70e30a7a50262",
+        "age": "",
+        "gender": "",
+        "disease": "",
+        "preferences": ""
+    }
+}

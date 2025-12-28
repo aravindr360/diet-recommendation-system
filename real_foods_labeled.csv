@@ -1,0 +1,93 @@
+food,calories,protein,carbs,fat,sugar,sodium,gi,diabetes_label,hypertension_label,cvd_label,pcos_label,obesity_label
+White Rice,130,2.7,28.0,0.3,0.1,1,60,Moderate,Recommended,Recommended,Moderate,Recommended
+Brown Rice,123,2.6,25.6,1.0,0.4,5,55,Recommended,Recommended,Recommended,Recommended,Recommended
+Oats,389,16.9,66.3,6.9,0.9,2,55,Recommended,Recommended,Moderate,Recommended,Avoid
+Apple,52,0.3,14.0,0.2,10.4,1,38,Moderate,Recommended,Recommended,Moderate,Recommended
+Banana,89,1.1,23.0,0.3,12.2,1,60,Avoid,Recommended,Recommended,Avoid,Recommended
+Milk(100ml),42,3.4,5.0,1.0,5.0,44,35,Recommended,Recommended,Recommended,Recommended,Recommended
+Egg,155,13.0,1.1,11.0,1.1,124,40,Recommended,Recommended,Avoid,Recommended,Moderate
+Chicken Breast,165,31.0,0.0,3.6,0.0,74,0,Recommended,Recommended,Recommended,Recommended,Recommended
+Almonds,579,21.0,22.0,50.0,4.4,1,15,Recommended,Recommended,Avoid,Recommended,Avoid
+Paneer,265,18.0,1.2,20.0,0.8,22,30,Recommended,Recommended,Avoid,Moderate,Moderate
+
+Wheat Bread (Brown),247,13.0,41.0,4.2,6.0,400,65,Moderate,Avoid,Recommended,Moderate,Moderate
+White Bread,266,8.9,49.0,3.2,5.0,490,75,Avoid,Avoid,Recommended,Avoid,Moderate
+Boiled Potato,87,1.9,20.1,0.1,0.9,7,65,Moderate,Recommended,Recommended,Moderate,Recommended
+Sweet Potato,90,2.0,21.0,0.2,4.2,36,55,Recommended,Recommended,Recommended,Recommended,Recommended
+Carrot (Raw),41,0.9,10.0,0.2,4.7,69,35,Recommended,Recommended,Recommended,Recommended,Recommended
+Tomato (Raw),18,0.9,3.9,0.2,2.6,5,15,Recommended,Recommended,Recommended,Recommended,Recommended
+Spinach (Cooked),23,3.0,3.8,0.3,0.4,79,15,Recommended,Recommended,Recommended,Recommended,Recommended
+Broccoli (Cooked),35,2.4,7.2,0.4,1.4,41,15,Recommended,Recommended,Recommended,Recommended,Recommended
+Orange,47,0.9,12.0,0.1,9.4,0,40,Moderate,Recommended,Recommended,Moderate,Recommended
+Papaya,43,0.5,11.0,0.3,7.8,8,35,Moderate,Recommended,Recommended,Moderate,Recommended
+Peanuts (Roasted),585,25.8,16.1,49.7,4.7,6,15,Recommended,Recommended,Avoid,Recommended,Avoid
+Cashew Nuts,553,18.2,30.2,43.8,5.9,12,25,Moderate,Recommended,Avoid,Moderate,Avoid
+Yogurt (Plain),59,10.0,3.6,0.4,3.2,36,35,Recommended,Recommended,Recommended,Recommended,Recommended
+Cheese (Low-fat),196,28.0,2.0,7.0,0.5,705,30,Recommended,Avoid,Moderate,Recommended,Moderate
+Tofu,76,8.0,1.9,4.8,0.3,7,15,Recommended,Recommended,Recommended,Recommended,Recommended
+
+Idli,58,2.0,12.0,0.4,0.5,120,40,Recommended,Recommended,Recommended,Recommended,Recommended
+Dosa,168,4.0,28.0,3.7,1.0,220,60,Moderate,Moderate,Recommended,Moderate,Moderate
+Chapati,120,3.5,18.0,3.0,0.8,180,45,Recommended,Recommended,Recommended,Recommended,Recommended
+Poha,180,3.0,36.0,2.5,1.5,200,60,Moderate,Moderate,Recommended,Moderate,Moderate
+Sambar_(with_dosa),76,4.0,10.0,2.0,1.2,300,40,Recommended,Moderate,Recommended,Recommended,Recommended
+Curd,61,3.1,4.7,3.3,3.0,80,35,Recommended,Recommended,Recommended,Recommended,Recommended
+Dal,104,7.0,18.0,0.8,1.2,150,35,Recommended,Recommended,Recommended,Recommended,Recommended
+Vegetable Curry(with_idali),90,2.5,10.0,4.0,1.0,180,40,Recommended,Recommended,Recommended,Recommended,Recommended
+Fish Curry(with_rice),140,20.0,5.0,5.0,0.5,300,40,Recommended,Moderate,Moderate,Recommended,Moderate
+Chicken Curry(with_chapati),190,22.0,4.0,7.5,0.5,350,40,Recommended,Moderate,Moderate,Recommended,Moderate
+
+Rice Gruel (Kanji),40,0.8,8.0,0.1,0.2,30,30,Recommended,Recommended,Recommended,Recommended,Recommended
+Vegetable Upma,210,5.0,35.0,5.0,1.8,220,55,Recommended,Moderate,Moderate,Moderate,Moderate
+Masala Dosa,250,6.0,38.0,8.0,2.0,300,65,Moderate,Moderate,Moderate,Moderate,Moderate
+Plain Rice (Cooked),130,2.7,28.0,0.3,0.1,1,60,Moderate,Recommended,Recommended,Moderate,Recommended
+Lemon Rice,210,4.0,36.0,6.0,1.5,250,60,Moderate,Moderate,Moderate,Moderate,Moderate
+Curd Rice,170,4.0,28.0,4.5,2.5,220,55,Recommended,Moderate,Recommended,Recommended,Recommended
+Vegetable Pulao,230,5.5,40.0,6.0,2.0,260,60,Moderate,Moderate,Moderate,Moderate,Moderate
+Rajma Curry(with rice),140,9.0,22.0,3.0,1.5,240,40,Recommended,Moderate,Recommended,Recommended,Recommended
+Chole Curry(with rice),160,8.5,24.0,4.0,1.8,260,45,Recommended,Moderate,Recommended,Recommended,Recommended
+Vegetable Khichdi(with rice),150,6.0,25.0,3.5,1.5,180,45,Recommended,Recommended,Recommended,Recommended,Recommended
+Palak Paneer,220,11.0,8.0,16.0,2.0,300,35,Recommended,Moderate,Avoid,Recommended,Moderate
+Egg Curry(with puttu),180,12.0,6.0,12.0,1.0,280,40,Recommended,Moderate,Avoid,Recommended,Moderate
+Fish Fry (Shallow),220,24.0,2.0,12.0,0.5,350,70,Avoid,Moderate,Avoid,Avoid,Moderate
+Chicken Fry(with salads),260,26.0,3.0,18.0,0.5,400,0,Recommended,Avoid,Avoid,Moderate,Avoid
+Vegetable Stir Fry,120,3.0,14.0,5.0,1.0,180,40,Recommended,Recommended,Recommended,Recommended,Recommended
+
+
+
+Idli with Coconut Chutney,190,4.5,18.0,8.0,2.0,320,45,Moderate,Moderate,Moderate,Recommended,Moderate
+Dosa with Sambar,244,8.0,38.0,6.0,1.5,360,55,Moderate,Moderate,Moderate,Moderate,Moderate
+Vegetable Omelette with Toast,290,18.0,26.0,14.0,3.0,420,40,Moderate,Moderate,Moderate,Recommended,Moderate
+Oats Porridge with Milk,220,9.0,32.0,5.0,6.0,120,45,Recommended,Recommended,Recommended,Recommended,Recommended
+
+Rice with Sambar and Vegetables,310,10.0,50.0,5.0,2.5,380,50,Recommended,Moderate,Recommended,Recommended,Moderate
+Rice with Rajma Curry,330,14.0,52.0,4.0,2.0,420,50,Moderate,Moderate,Moderate,Recommended,Moderate
+Rice with Chole Curry,350,13.0,54.0,6.0,2.5,440,55,Moderate,Moderate,Moderate,Moderate,Moderate
+Rice with Fish Curry,330,24.0,45.0,6.0,1.0,360,50,Recommended,Recommended,Recommended,Recommended,Moderate
+
+
+
+
+Chapati with Dal and Vegetables,280,11.0,38.0,6.0,2.0,300,45,Recommended,Recommended,Recommended,Recommended,Moderate
+Chapati with Chole Curry,320,13.0,42.0,7.0,2.5,380,45,Moderate,Moderate,Moderate,Moderate,Moderate
+Chapati with Fish Fry,410,28.0,28.0,18.0,1.0,420,50,Moderate,Avoid,Avoid,Moderate,Avoid
+Chapati with Egg Bhurji,330,18.0,24.0,14.0,1.5,360,40,Moderate,Moderate,Moderate,Recommended,Moderate
+
+Vegetable Salad with Boiled Egg,180,14.0,10.0,7.0,2.0,180,25,Recommended,Recommended,Recommended,Recommended,Recommended
+Grilled Paneer with Vegetables,260,16.0,10.0,14.0,1.5,220,30,Recommended,Moderate,Moderate,Recommended,Moderate
+Vegetable Soup with Chapati,240,7.0,36.0,4.0,3.0,280,40,Recommended,Recommended,Recommended,Recommended,Moderate
+
+Curd Rice with Vegetables,260,8.0,38.0,6.0,3.0,260,50,Moderate,Moderate,Moderate,Recommended,Moderate
+Vegetable Stir Fry with Paneer,300,15.0,18.0,18.0,2.0,240,35,Moderate,Moderate,Moderate,Recommended,Moderate
+Egg Curry with Vegetables,260,14.0,10.0,12.0,1.0,300,35,Recommended,Moderate,Moderate,Recommended,Moderate
+
+Grilled Chicken with Brown Rice,360,34.0,42.0,6.0,1.0,280,50,Recommended,Recommended,Recommended,Recommended,Recommended
+Fish Curry with Chapati,340,26.0,28.0,8.0,1.0,320,45,Recommended,Recommended,Recommended,Recommended,Moderate
+Tofu Stir Fry with Vegetables,240,16.0,14.0,10.0,1.5,200,30,Recommended,Recommended,Recommended,Recommended,Recommended
+
+
+
+
+
+
+
