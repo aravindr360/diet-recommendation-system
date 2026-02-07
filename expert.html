@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expert Validation Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8fafc; padding: 20px; }
+  .header { display: flex; justify-content: space-between; align-items: center; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+  h2 { margin: 0; color: #0f172a; }
+  .logout { color: #ef4444; cursor: pointer; font-weight: bold; border: 1px solid #ef4444; padding: 5px 12px; border-radius: 6px; }
+  
+  .container { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+  
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { padding: 15px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+  th { background: #2563eb; color: white; font-weight: 600; }
+  tr:hover { background-color: #f1f5f9; }
+  
+  .status-badge { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+  .status-Pending { background: #fef9c3; color: #854d0e; }
+  .status-Approved { background: #dcfce7; color: #166534; }
+  .status-Rejected { background: #fee2e2; color: #991b1b; }
+
+  .btn { padding: 6px 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 13px; font-weight: bold; margin-right: 5px; color: white; }
+  .btn-view { background: #3b82f6; }
+  .btn-approve { background: #16a34a; }
+  .btn-reject { background: #dc2626; }
+  
+  /* MODAL STYLES */
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; }
+  .modal-content { background: white; padding: 25px; border-radius: 10px; width: 500px; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+  .modal-header { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
+  .diet-day { background: #f8fafc; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #e2e8f0; }
+  .diet-meal { font-size: 13px; margin: 5px 0; color: #334155; }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div style="display:flex; align-items:center; gap:15px;">
+        <span style="font-size:30px;">👨‍⚕️</span>
+        <div>
+            <h2 style="color:#2563eb;">Doctor / Nutritionist Panel</h2>
+            <div style="font-size:14px; color:#64748b;">Review and Validate AI Generated Diets.</div>
+        </div>
+    </div>
+    <div class="logout" onclick="logout()">Logout</div>
+</div>
+
+<div class="container">
+    <div id="queue">Loading patient submissions...</div>
+</div>
+
+<div id="viewModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Diet Plan Details</h3>
+            <span style="cursor:pointer; font-size:20px;" onclick="closeModal()">✖</span>
+        </div>
+        <div id="planContent"></div>
+        <div style="text-align:right; margin-top:15px;">
+            <button class="btn btn-view" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    if(sessionStorage.getItem("currentRole") !== 'doctor') window.location.href = "/";
+
+    function logout() { sessionStorage.clear(); window.location.href = "/"; }
+
+    let allSubmissions = []; // Store data locally to view it
+
+    async function loadQueue() {
+        try {
+            const r = await fetch('/api/get_pending_diets');
+            const data = await r.json();
+            allSubmissions = data; // Save for modal
+            
+            if(data.length === 0) {
+                document.getElementById("queue").innerHTML = "<p style='text-align:center; padding:20px; color:#666;'>No pending reviews.</p>";
+                return;
+            }
+
+            let html = `<table><thead><tr><th>User</th><th>Condition</th><th>Status</th><th>Review</th><th>Actions</th></tr></thead><tbody>`;
+            
+            data.forEach(item => {
+                let statusKey = item.status.split(" ")[0]; 
+                
+                html += `<tr>
+                    <td><b>${item.username}</b><br>Age: ${item.age}</td>
+                    <td>${item.disease}</td>
+                    <td><span class="status-badge status-${statusKey}">${item.status}</span></td>
+                    <td>${item.doctor_comment}</td>
+                    <td>
+                        <button class="btn btn-view" onclick="viewPlan(${item.id})">👁️ View Plan</button>
+                        ${item.status === 'Pending Review' ? `
+                        <button class="btn btn-approve" onclick="review(${item.id}, 'Approved')">✔</button>
+                        <button class="btn btn-reject" onclick="review(${item.id}, 'Rejected')">✖</button>
+                        ` : ''}
+                    </td>
+                </tr>`;
+            });
+            html += "</tbody></table>";
+            document.getElementById("queue").innerHTML = html;
+        } catch(e) { console.error(e); }
+    }
+/* --- REPLACE YOUR OLD viewPlan FUNCTION WITH THIS --- */
+  function viewPlan(id) {
+        const item = allSubmissions.find(s => s.id === id);
+        if(!item) return;
+
+        let content = "";
+
+        // --- 🟢 NEW: PATIENT PROFILE CARD ---
+        // This shows the stats at the top of the modal
+        content += `
+        <div style="background-color: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; display: flex; justify-content: space-between;">
+            <div>
+                <small style="color:#64748b; font-weight:bold;">HEIGHT</small><br>
+                <span style="font-size:16px; font-weight:600;">${item.height || 'N/A'} cm</span>
+            </div>
+            <div>
+                <small style="color:#64748b; font-weight:bold;">WEIGHT</small><br>
+                <span style="font-size:16px; font-weight:600;">${item.weight || 'N/A'} kg</span>
+            </div>
+            <div>
+                <small style="color:#64748b; font-weight:bold;">BMI</small><br>
+                <span style="font-size:16px; font-weight:600; color: ${item.bmi > 25 ? '#dc2626' : '#16a34a'}">${item.bmi || 'N/A'}</span>
+            </div>
+            <div>
+                <small style="color:#64748b; font-weight:bold;">TARGET CALORIES</small><br>
+                <span style="font-size:16px; font-weight:600; color:#2563eb;">${item.calories} kcal</span>
+            </div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 15px;">
+        `;
+        // --- END PATIENT CARD ---
+
+        // (The rest of your existing loop code stays here...)
+        const weekOrder = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        const planKeys = Object.keys(item.diet_plan);
+
+        weekOrder.forEach(day => {
+            if (item.diet_plan[day]) {
+                content += buildDayHtml(day, item.diet_plan[day]);
+            }
+        });
+
+        planKeys.forEach(key => {
+            if (!weekOrder.includes(key)) {
+                content += buildDayHtml(key, item.diet_plan[key]);
+            }
+        });
+
+        document.getElementById("planContent").innerHTML = content;
+        document.getElementById("viewModal").style.display = "flex";
+    }
+    // Helper function to keep code clean (Paste this right below viewPlan)
+    function buildDayHtml(day, meals) {
+        let html = `<div class="diet-day"><strong>${day.toUpperCase()}</strong>`;
+        
+        ['breakfast', 'lunch', 'dinner', 'snack'].forEach(m => {
+            if(meals[m]) {
+                html += `<div class="diet-meal">
+                    <span style="color:#2563eb; font-weight:bold; text-transform:capitalize;">${m}:</span> 
+                    ${meals[m].food} 
+                    <span style="color:#64748b; font-size:11px;">(${meals[m].calories} kcal)</span>
+                </div>`;
+            }
+        });
+        html += `</div>`;
+        return html;
+    }
+    function closeModal() { document.getElementById("viewModal").style.display = "none"; }
+
+    async function review(id, action) {
+        const comment = prompt("Medical Note:", action === "Approved" ? "Plan is safe." : "Too many carbs.");
+        if(comment === null) return; 
+
+        await fetch('/api/submit_review', {
+            method: 'POST', headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ id: id, action: action, comment: comment })
+        });
+        loadQueue(); 
+    }
+
+    loadQueue();
+    setInterval(loadQueue, 5000); 
+</script>
+</body>
+</html>

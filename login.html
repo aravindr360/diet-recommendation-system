@@ -1,78 +1,210 @@
-//login.html
-
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Login | Diet Recommender</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login - Smart Diet System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- PROFESSIONAL STYLING --- */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f1f5f9; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 380px; 
+        }
+        h2 { 
+            text-align: center; 
+            color: #1e293b; 
+            margin-top: 0; 
+            margin-bottom: 25px;
+        }
+        
+        /* TOGGLE SWITCH */
+        .role-switch { 
+            display: flex; 
+            background: #e2e8f0; 
+            border-radius: 8px; 
+            padding: 4px; 
+            margin-bottom: 25px; 
+        }
+        .role-btn { 
+            flex: 1; 
+            padding: 10px; 
+            text-align: center; 
+            cursor: pointer; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 14px; 
+            color: #64748b; 
+            transition: all 0.2s; 
+        }
+        .role-btn.active { 
+            background: white; 
+            color: #2563eb; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+        }
+
+        /* INPUTS & BUTTONS */
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 8px; 
+            box-sizing: border-box; 
+            font-size: 15px; 
+            outline: none;
+        }
+        input:focus { border-color: #2563eb; }
+        
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #2563eb; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: background 0.2s;
+        }
+        button:hover { background: #1d4ed8; }
+        
+        .link { 
+            text-align: center; 
+            margin-top: 20px; 
+            font-size: 14px; 
+            color: #2563eb; 
+            cursor: pointer; 
+        }
+        .link:hover { text-decoration: underline; }
+        
+        .error { 
+            color: #ef4444; 
+            font-size: 14px; 
+            text-align: center; 
+            margin-top: 15px; 
+            display: none; 
+            background: #fee2e2;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Login</h2>
-<input id="loginUser" placeholder="Username">
-<input id="loginPass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+<div class="card">
+    <h2 id="pageTitle">Smart Diet Login</h2>
+    
+    <div class="role-switch">
+        <div class="role-btn active" id="btnUser" onclick="setRole('user')">Patient</div>
+        <div class="role-btn" id="btnDoc" onclick="setRole('doctor')">Doctor</div>
+    </div>
 
-<hr>
-
-<h2>Register</h2>
-<input id="regUser" placeholder="Username">
-<input id="regPass" type="password" placeholder="Password">
-<input id="regAge" placeholder="Age">
-<input id="regGender" placeholder="Gender">
-<input id="regDisease" placeholder="Disease">
-<input id="regPref" placeholder="Preferences">
-<button onclick="register()">Register</button>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    
+    <button onclick="login()" id="loginBtn">Login</button>
+    
+    <div id="regLink" class="link" onclick="register()">New Patient? Create Account</div>
+    <div id="msg" class="error">Invalid Credentials</div>
+</div>
 
 <script>
-function register() {
-  fetch("/register", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      username: document.getElementById("regUser").value,
-      password: document.getElementById("regPass").value,
-      age: document.getElementById("regAge").value,
-      gender: document.getElementById("regGender").value,
-      disease: document.getElementById("regDisease").value,
-      preferences: document.getElementById("regPref").value
-    })
-  })
-  .then(async res => {
-  const text = await res.text();
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error(text);
-  }
-})
+    let role = 'user';
 
-  .then(data => {
-    alert(JSON.stringify(data));
-  })
-  .catch(err => alert("Error: " + err));
-}
-
-function login() {
-  fetch("/login", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      username: document.getElementById("loginUser").value,
-      password: document.getElementById("loginPass").value
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === "success") {
-      window.location.href = "/";
-    } else {
-      alert(data.error);
+    function setRole(r) {
+        role = r;
+        // Update UI Tabs
+        document.getElementById('btnUser').className = r === 'user' ? 'role-btn active' : 'role-btn';
+        document.getElementById('btnDoc').className = r === 'doctor' ? 'role-btn active' : 'role-btn';
+        
+        // Hide Register link if Doctor (Doctors are pre-set)
+        document.getElementById('regLink').style.display = r === 'user' ? 'block' : 'none';
+        
+        // Clear errors
+        document.getElementById('msg').style.display = 'none';
+        document.getElementById('pageTitle').innerText = r === 'user' ? 'Patient Login' : 'Doctor Portal';
     }
-  });
-}
-</script>
 
+    async function login() {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        
+        if(!u || !p) { showMsg("Please enter username and password"); return; }
+
+        const btn = document.getElementById('loginBtn');
+        btn.innerText = "Verifying...";
+
+        try {
+            const r = await fetch('/api/login', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ role: role, username: u, password: p })
+            });
+            const data = await r.json();
+            
+            if (data.status === 'success') {
+                sessionStorage.setItem("currentUser", u);
+                sessionStorage.setItem("currentRole", role);
+                window.location.href = data.redirect;
+            } else {
+                showMsg(data.msg);
+            }
+        } catch(e) {
+            showMsg("Server connection error");
+        } finally {
+            btn.innerText = "Login";
+        }
+    }
+
+    async function register() {
+        const u = document.getElementById('username').value;
+        const p = document.getElementById('password').value;
+        
+        if (!u || !p) { showMsg("Enter a username and password to register"); return; }
+        
+        const btn = document.getElementById('loginBtn');
+        btn.innerText = "Registering...";
+
+        try {
+            const r = await fetch('/api/register', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ username: u, password: p })
+            });
+            const data = await r.json();
+            
+            if (data.status === 'success') {
+                alert("Account created successfully! You can now login.");
+                btn.innerText = "Login";
+            } else {
+                showMsg(data.msg);
+                btn.innerText = "Login";
+            }
+        } catch(e) {
+            showMsg("Registration failed");
+            btn.innerText = "Login";
+        }
+    }
+
+    function showMsg(text) {
+        const el = document.getElementById('msg');
+        el.innerText = text;
+        el.style.display = 'block';
+    }
+</script>
 </body>
 </html>
 

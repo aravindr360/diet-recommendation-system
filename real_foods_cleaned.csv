@@ -54,3 +54,80 @@ Egg Curry,180,12.0,6.0,12.0,1.0,280,40
 Fish Fry (Shallow),220,24.0,2.0,12.0,0.5,350,70
 Chicken Fry,260,26.0,3.0,18.0,0.5,400,0
 Vegetable Stir Fry,120,3.0,14.0,5.0,1.0,180,40
+
+labeled old data//
+food,calories,protein,carbs,fat,sugar,sodium,gi,diabetes_label,hypertension_label,cvd_label,pcos_label,obesity_label,meal_type,target_audience,food_type
+Idli (2) w/ 1 Bowl Sambar & 1 tbsp Coconut Chutney,340,10.0,42.0,14.0,2.0,450,50,Recommended,Moderate,Recommended,Recommended,Recommended,Breakfast,All,Veg
+Dosa (1 Medium) w/ 1 Bowl Sambar & 1 tbsp Chutney,380,8.0,52.0,14.0,2.0,480,55,Moderate,Moderate,Moderate,Moderate,Moderate,Breakfast,All,Veg
+Oats Porridge (1 Large Bowl) w/ 1 tbsp Nuts & Seeds,350,14.0,45.0,12.0,4.0,120,45,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Seniors,Veg
+Veg Upma (1 Cup) w/ 1 tbsp Roasted Peanuts,320,9.0,48.0,10.0,1.8,300,55,Recommended,Moderate,Moderate,Moderate,Moderate,Breakfast,Seniors,Veg
+Poha (1 Plate) w/ 1 tbsp Peanuts & 1/2 Cup Sprout Salad,380,10.0,55.0,12.0,2.0,250,60,Moderate,Moderate,Recommended,Moderate,Moderate,Breakfast,All,Veg
+Boiled Eggs (2) w/ 2 Multigrain Toast,360,18.0,32.0,16.0,1.5,350,50,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Adults,Non-Veg
+Masala Omelette (2 Eggs) & 2 Toast,420,22.0,30.0,22.0,2.0,500,55,Moderate,Moderate,Moderate,Recommended,Moderate,Breakfast,Adults,Non-Veg
+Millet Dosa (2) w/ 1 tbsp Coconut Chutney,320,8.0,45.0,10.0,1.5,350,50,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg
+Methi Thepla (2) w/ Curd & Pickle,260,6.0,35.0,10.0,2.0,350,50,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg
+Multigrain Sandwich (Paneer/Veg),340,14.0,40.0,12.0,3.0,450,55,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg
+Ragi Porridge w/ Jaggery & Milk,240,6.0,45.0,4.0,12.0,80,55,Moderate,Recommended,Recommended,Moderate,Recommended,Breakfast,Seniors,Veg
+Moong Dal Chilla (2) w/ Paneer Stuffing,320,16.0,34.0,12.0,1.0,300,40,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg
+Scrambled Eggs (3) w/ Spinach & Toast,340,21.0,22.0,18.0,1.0,400,45,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Adults,Non-Veg
+Aloo Paratha (1 Large) w/ Curd & Butter,450,8.0,55.0,20.0,3.0,450,70,Moderate,Moderate,Moderate,Moderate,Moderate,Breakfast,Kids,Veg
+Brown Rice (1 Cup) w/ 1 Bowl Dal & 1 Cup Cucumber Salad,460,16.0,68.0,12.0,2.0,400,50,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg
+Curd Rice (1 Bowl) w/ 1 tbsp Pomegranate & Tadka,340,10.0,45.0,12.0,4.0,250,50,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Seniors,Veg
+Chapati (2) w/ 1 Bowl Bhindi Fry & 1 Bowl Dal,440,16.0,58.0,14.0,2.0,450,50,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg
+Rice (1 Cup) w/ 2 Pcs Fish Curry & 1 Cup Veggies,520,35.0,55.0,16.0,1.0,500,55,Recommended,Moderate,Recommended,Recommended,Moderate,Lunch,Adults,Non-Veg
+Chicken Biryani (Medium Bowl) w/ 1 Cup Raita,650,28.0,75.0,24.0,3.0,700,65,Avoid,Avoid,Avoid,Avoid,Avoid,Lunch,Adults,Non-Veg
+Grilled Chicken Breast (200g) w/ Salad,420,45.0,12.0,18.0,1.0,400,30,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Adults,Non-Veg
+Rajma Chawal (1 Bowl) w/ 1 Small Bowl Jeera Aloo,540,18.0,78.0,14.0,2.5,500,50,Moderate,Moderate,Recommended,Recommended,Moderate,Lunch,Adults,Veg
+Lemon Rice (1 Bowl) w/ Papad & Cucumber,450,8.0,65.0,16.0,2.0,600,65,Moderate,Avoid,Moderate,Moderate,Avoid,Lunch,Kids,Veg
+Soya Chunks Curry & 2 Rotis,410,24.0,45.0,12.0,2.0,420,50,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg
+Dal Tadka w/ Jeera Rice & Salad,400,14.0,55.0,12.0,1.0,450,55,Recommended,Moderate,Recommended,Recommended,Recommended,Lunch,All,Veg
+Fish Moilee (Coconut Stew) & Rice,480,26.0,42.0,22.0,2.0,450,55,Recommended,Moderate,Recommended,Recommended,Moderate,Lunch,Adults,Non-Veg
+Quinoa Salad w/ Chickpeas & Feta,380,14.0,45.0,14.0,2.0,250,35,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg
+Ragi Mudde w/ Sambar & Greens,360,10.0,60.0,6.0,1.0,300,45,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Seniors,Veg
+Egg Curry (2 Eggs) w/ Rice & Salad,420,18.0,48.0,16.0,2.0,450,55,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Adults,Non-Veg
+Paneer Butter Masala & 2 Butter Naan,750,18.0,75.0,40.0,8.0,800,70,Avoid,Avoid,Avoid,Moderate,Avoid,Lunch,Adults,Veg
+Chole Bhature (2 Bhature),850,22.0,95.0,40.0,4.0,900,75,Avoid,Avoid,Avoid,Avoid,Avoid,Lunch,Adults,Veg
+Veg Khichdi (Bowl) w/ Curd & Kadhi,380,14.0,55.0,10.0,1.5,350,45,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg
+Phulka (2) w/ 1 Bowl Palak Paneer,420,20.0,40.0,20.0,2.5,450,45,Recommended,Moderate,Recommended,Recommended,Moderate,Dinner,All,Veg
+Chicken Curry (1 Bowl) & 2 Chapati,480,32.0,42.0,18.0,2.0,550,55,Moderate,Moderate,Moderate,Recommended,Moderate,Dinner,Adults,Non-Veg
+Grilled Fish (2 Pcs) w/ Sautéed Veggies,440,42.0,15.0,20.0,1.0,350,35,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Adults,Non-Veg
+Rice Gruel / Kanji w/ Moong Dal,210,8.0,35.0,3.0,0.5,150,60,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg
+Egg Bhurji (3 Eggs) & 2 Chapati,450,24.0,38.0,22.0,2.0,450,50,Recommended,Moderate,Recommended,Recommended,Recommended,Dinner,Adults,Non-Veg
+Cream of Veg Soup & Garlic Bread,280,6.0,35.0,12.0,4.0,550,45,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg
+Pumpkin Soup & 2 Garlic Bread,260,5.0,35.0,10.0,4.0,400,55,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg
+Chicken Stew w/ 2 Appam (Light Dinner),380,22.0,42.0,12.0,2.0,400,50,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Adults,Non-Veg
+Bajra Khichdi w/ Ghee & Curd,340,10.0,45.0,12.0,1.0,300,45,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg
+Tofu Stir Fry w/ Veggies & Rice,380,22.0,45.0,12.0,2.0,350,45,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg
+Lauki Sabzi & 2 Phulka w/ Dal,320,10.0,45.0,8.0,3.0,250,40,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg
+Paneer Bhurji & 2 Chapati,440,20.0,38.0,22.0,2.0,450,50,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg
+Mutton Rogan Josh & Rice,620,28.0,45.0,35.0,2.0,650,60,Avoid,Avoid,Avoid,Avoid,Avoid,Dinner,Adults,Non-Veg
+Fruit Salad Bowl w/ Chia Seeds,180,4.0,35.0,3.0,22.0,10,50,Moderate,Recommended,Recommended,Moderate,Recommended,Snack,All,Veg
+Mixed Nuts (Large Handful),250,8.0,8.0,22.0,1.0,5,15,Recommended,Recommended,Recommended,Recommended,Avoid,Snack,All,Veg
+Green Tea & 2 Digestive Biscuits,110,2.0,18.0,4.0,3.0,80,45,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Seniors,Veg
+Apple Slices w/ Peanut Butter,220,6.0,22.0,14.0,12.0,90,40,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Kids,Veg
+Banana Smoothie (Glass) w/ Honey,260,6.0,45.0,6.0,28.0,70,60,Avoid,Recommended,Recommended,Avoid,Avoid,Snack,Kids,Veg
+Paneer Tikka (6 pcs) w/ 1 tbsp Mint Chutney,340,24.0,12.0,22.0,2.0,400,35,Recommended,Recommended,Recommended,Recommended,Moderate,Snack,All,Veg
+Roasted Makhana (Large Cup),140,4.0,28.0,1.0,0.0,5,30,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Sprouted Moong Salad (Bowl),160,10.0,24.0,2.0,2.0,180,25,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Adults,Veg
+Boiled Chana Chaat (Bowl),220,12.0,35.0,3.0,1.0,250,30,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Adults,Veg
+Masala Buttermilk (Large Glass),80,4.0,6.0,4.0,0.0,150,15,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Cucumber Sticks (1 Cup) w/ 2 tbsp Hummus Dip,210,6.0,18.0,12.0,1.0,250,15,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Boiled Egg Whites (4),70,14.0,1.0,0.2,0.8,220,0,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Non-Veg
+Chicken Clear Soup (Large Bowl),140,18.0,6.0,4.0,0.5,450,10,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Non-Veg
+Papaya Bowl (Large) w/ Lime,90,1.0,22.0,0.3,16.0,5,55,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Greek Yogurt w/ Berries & Nuts,240,16.0,18.0,10.0,12.0,50,25,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Roasted Peanuts (Handful),170,7.0,6.0,14.0,1.0,5,15,Recommended,Recommended,Recommended,Recommended,Avoid,Snack,Adults,Veg
+Sweet Corn Cup (Buttered),150,4.0,24.0,5.0,3.0,150,55,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,Kids,Veg
+Clear Veg Soup w/ Croutons,120,3.0,18.0,4.0,2.0,350,30,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Ragi Biscuits (3) & Tea,160,2.0,22.0,6.0,5.0,50,60,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Orange (Medium) & Walnuts,150,3.0,18.0,8.0,12.0,0,35,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Guava Slices w/ Chili Salt,60,3.5,18.0,0.5,10.0,150,30,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Adults,Veg
+Grilled Paneer (100g) w/ Seasoning,280,18.0,4.0,22.0,1.0,150,30,Recommended,Recommended,Avoid,Recommended,Moderate,Snack,All,Veg
+Edamame Beans (Steamed),120,11.0,10.0,5.0,2.0,15,20,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Watermelon Bowl w/ Feta Cheese,180,5.0,20.0,8.0,16.0,120,55,Moderate,Moderate,Recommended,Moderate,Recommended,Snack,All,Veg
+Multigrain Toast w/ Avocado Smash,260,7.0,22.0,16.0,1.0,200,45,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Adults,Veg
+Dates (3) & Walnuts (4),220,4.0,32.0,12.0,28.0,0,40,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,Adults,Veg
+Besan Chilla (2 Small) w/ Curd,280,12.0,32.0,10.0,2.0,300,35,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Chia Seed Pudding w/ Almond Milk,210,6.0,16.0,12.0,0.5,20,20,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Dahi Vada (2 pcs - Non Fried),180,6.0,24.0,6.0,3.0,220,45,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
+Sweet Potato Chaat (Bowl) w/ Lemon,180,3.0,38.0,1.0,8.0,180,50,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg
