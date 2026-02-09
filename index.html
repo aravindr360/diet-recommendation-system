@@ -100,7 +100,6 @@ canvas {
 </head>
 
 <body>
-
 <div class="logout" onclick="logout()">Logout</div>
 
 <div class="container">
@@ -128,15 +127,28 @@ canvas {
         <input id="cal" readonly style="background:#e2e8f0; color:#64748b;">
       </div>
       
-      <div class="form-group">
-        <label>Health Condition</label>
-        <select id="disease">
-          <option value="diabetes">Diabetes</option>
-          <option value="hypertension">Hypertension</option>
-          <option value="cvd">Cardiovascular (CVD)</option>
-          <option value="obesity">Obesity</option>
-          <option value="pcos">PCOS</option>
-        </select>
+      <div class="form-group" style="grid-row: span 2;">
+        <label>Health Conditions (Select all that apply)</label>
+        <div id="disease-group" style="background:#f8fafc; padding:10px; border:1px solid #cbd5e1; border-radius:8px; max-height:140px; overflow-y:auto;">
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="none" class="disease-check"> None / Healthy
+            </label>
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="diabetes" class="disease-check"> Diabetes
+            </label>
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="hypertension" class="disease-check"> Hypertension
+            </label>
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="cvd" class="disease-check"> Heart Disease (CVD)
+            </label>
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="obesity" class="disease-check"> Obesity
+            </label>
+            <label style="display:block; margin-bottom:5px;">
+                <input type="checkbox" value="pcos" class="disease-check"> PCOS
+            </label>
+        </div>
       </div>
 
       <div class="form-group">
@@ -157,26 +169,22 @@ canvas {
           <option value="veg">Vegetarian</option>
         </select>
       </div>
-    </div>
-    <div class="form-group">
+      
+      <div class="form-group">
         <label>Regional Preference</label>
         <select id="region">
              <option value="All">All Regions (Mix)</option>
              <option value="South">South Indian</option>
              <option value="North">North Indian</option>
         </select>
-    </div>
-
-    <div class="button-group">
+      </div>
+    </div> <div class="button-group">
       <button id="runBtn" onclick="run(false)">Generate Daily Diet</button>
       <button id="weeklyBtn" onclick="run(true)">Generate Weekly Plan</button>
       <button onclick="openHistory()" style="background:#f59e0b;">📜 History</button>
       <button id="downloadPdfBtn">Download PDF Report</button>
     </div>
-  </div>
-
- <div id="doctorStatus" style="display:none; margin: 20px 0; padding: 20px; border-radius: 8px; text-align: center;">
-      </div>
+  </div> <div id="doctorStatus" style="display:none; margin: 20px 0; padding: 20px; border-radius: 8px; text-align: center;"></div>
 
   <div id="submitSection" style="display:none; text-align:center; margin: 20px 0; padding: 20px; border: 1px dashed #cbd5e1; border-radius: 12px;">
       <p style="color:#64748b; margin-bottom:10px; font-weight:600;">Satisfied with this plan?</p>
@@ -202,7 +210,6 @@ canvas {
     </div>
 </div>
 <script>
-  
 // --- 1. AUTHENTICATION CHECK ---
 const currentUser = sessionStorage.getItem("currentUser");
 if(!currentUser) {
@@ -212,7 +219,7 @@ if(!currentUser) {
 // --- 2. GLOBAL VARIABLES ---
 let lastWeeklyDiet = null;
 let lastDailyDiet = null;
-let isHistoryMode = false; // Flag to stop auto-updates
+let isHistoryMode = false;
 const cards = document.getElementById("cards");
 const statusDiv = document.getElementById("status");
 
@@ -229,23 +236,7 @@ function calculateStats() {
     }
 }
 
-// --- NEW FUNCTION: Discard Draft & Reload Approved ---
-function restoreApproved() {
-    if(confirm("Discard this new draft and reload your Approved Diet?")) {
-        // Clear the local "New" plan
-        lastWeeklyDiet = null;
-        lastDailyDiet = null;
-        
-        // Clear the screen
-        document.getElementById("cards").innerHTML = ""; 
-        document.getElementById("submitSection").style.display = "none"; 
-        
-        // Run check immediately - this will trigger the "Auto-Load" logic
-        // because now (userHasNewPlan) is false!
-        checkDbStatus(); 
-    }
-}
-// --- UPDATED STATUS CHECK (With Auto-Fill) ---
+// --- 4. CHECK DB STATUS (FIXED: Removed the crash causing line) ---
 async function checkDbStatus() {
     if (isHistoryMode) return;
     try {
@@ -258,86 +249,80 @@ async function checkDbStatus() {
         const box = document.getElementById('doctorStatus');
         const submitSection = document.getElementById('submitSection');
 
-        // --- 🟢 NEW: AUTO-FILL LOGIC ---
-        // Only fill if the input boxes are currently empty (so we don't annoy the user if they are typing)
+        // --- AUTO-FILL (SAFE VERSION) ---
         if (data.status !== "No Submission") {
             if (!document.getElementById('height').value && data.height) document.getElementById('height').value = data.height;
             if (!document.getElementById('weight').value && data.weight) document.getElementById('weight').value = data.weight;
             if (!document.getElementById('age').value && data.age) document.getElementById('age').value = data.age;
-            if (!document.getElementById('disease').value && data.disease) document.getElementById('disease').value = data.disease;
             
-            // Fill Calculated Fields directly from DB
+            // 🔴 REMOVED THE CRASHING LINE: if (... document.getElementById('disease').value ...)
+            // We skip auto-filling checkboxes for now to keep it simple and crash-free.
+
             if (!document.getElementById('bmi').value && data.bmi) document.getElementById('bmi').value = data.bmi;
             if (!document.getElementById('cal').value && data.calories) document.getElementById('cal').value = data.calories;
         }
-        // -------------------------------
 
-        // FLAG: User has generated a NEW plan locally?
         const userHasNewPlan = (lastWeeklyDiet || lastDailyDiet);
 
-        // --- 1. HANDLE HISTORY (STATUS BOX) ---
         if (data.status === "No Submission") {
             if(box) box.style.display = "none";
-        } 
-        else {
+        } else {
             if(box) {
                 box.style.display = "block";
-                
                 if (data.status === "Pending Review") {
                     box.style.background = "#fffbeb"; box.style.border = "1px solid #f59e0b"; box.style.color = "#92400e";
                     box.innerHTML = `<h3>🕒 Pending Review</h3><p>Your previous submission is waiting for the doctor.</p>`;
-                } 
-                else if (data.status === "Approved") {
+                } else if (data.status === "Approved") {
                     box.style.background = "#dcfce7"; box.style.border = "1px solid #22c55e"; box.style.color = "#166534";
-                    
                     let restoreBtn = "";
                     if(userHasNewPlan) {
-                        restoreBtn = `<div style="margin-top:10px; border-top:1px solid #86efac; padding-top:10px;">
-                            <span style="font-size:12px; font-weight:bold;">⚠️ You are viewing a New Draft.</span><br>
-                            <button onclick="restoreApproved()" style="margin-top:5px; background:#16a34a; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:12px;">
-                                ↩ View Original Approved Plan
-                            </button>
-                        </div>`;
+                        restoreBtn = `<div style="margin-top:10px; border-top:1px solid #86efac; padding-top:10px;"><span style="font-size:12px; font-weight:bold;">⚠️ You are viewing a New Draft.</span><br><button onclick="restoreApproved()" style="margin-top:5px; background:#16a34a; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-size:12px;">↩ View Original Approved Plan</button></div>`;
                     }
-
                     box.innerHTML = `<h3>✅ Last Plan: Approved</h3><p><b>Doctor's Note:</b> ${data.doctor_comment}</p>${restoreBtn}`;
-                } 
-                else if (data.status === "Rejected") {
+                } else if (data.status === "Rejected") {
                     box.style.background = "#fee2e2"; box.style.border = "1px solid #ef4444"; box.style.color = "#991b1b";
                     box.innerHTML = `<h3>❌ Last Plan: Rejected</h3><p><b>Reason:</b> ${data.doctor_comment}</p>`;
                 }
             }
         }
 
-        // --- 2. HANDLE NEW SUBMISSION (BUTTON) ---
-        if (userHasNewPlan && submitSection) {
-            submitSection.style.display = "block";
-        } else if (submitSection) {
-            submitSection.style.display = "none";
-        }
+        if (userHasNewPlan && submitSection) submitSection.style.display = "block";
+        else if (submitSection) submitSection.style.display = "none";
 
-        // --- 3. AUTO-LOAD (Only if NOT looking at a new plan) ---
         if (!userHasNewPlan && data.diet_plan && document.getElementById("cards").innerHTML === "") {
              const savedPlan = data.diet_plan;
-             if(savedPlan["Mon"]) {
-                 renderWeekly(savedPlan);
-             } else {
-                 renderDaily(savedPlan["Today"] || savedPlan);
-             }
+             if(savedPlan["Mon"]) renderWeekly(savedPlan);
+             else renderDaily(savedPlan["Today"] || savedPlan);
         }
-
     } catch(e) { console.log("DB Check error", e); }
 }
-setInterval(checkDbStatus, 3000); // Poll every 3s
+setInterval(checkDbStatus, 3000);
 
-// --- 5. GENERATE DIET ---
+// --- 5. GENERATE DIET (ROBUST VERSION) ---
 async function run(weekly){
-  document.getElementById("cards").innerHTML = "<p style='text-align:center; color:#2563eb;'>Generating new plan...</p>";
-    cards.innerHTML = "<p style='text-align:center; color:#2563eb; font-weight:bold;'>Generating your AI Diet Plan...</p>";
-    statusDiv.innerHTML = "";
+    if(!document.getElementById('age')) { alert("Error: Missing 'age' input"); return; }
+    if(!document.getElementById('pref')) { alert("Error: Missing 'pref' input"); return; }
+    if(!document.getElementById('region')) { alert("Error: Missing 'region' input"); return; }
+    if(!document.getElementById('cal')) { alert("Error: Missing 'cal' input"); return; }
+
+    const cards = document.getElementById("cards");
+    const statusDiv = document.getElementById("status");
+    
+    cards.innerHTML = "<p style='text-align:center; color:#2563eb;'>Generating new plan...</p>";
+    if(statusDiv) statusDiv.innerHTML = "";
+    
+    const checkboxes = document.querySelectorAll('.disease-check:checked');
+    const selectedDiseases = Array.from(checkboxes).map(cb => cb.value);
+    const activeDiseases = selectedDiseases.filter(d => d !== "none");
+
+    if(selectedDiseases.length === 0) { 
+        alert("Please select a condition (or check 'None / Healthy')."); 
+        cards.innerHTML = ""; 
+        return; 
+    }
     
     const payload = {
-        disease: document.getElementById('disease').value,
+        diseases: activeDiseases,
         age: document.getElementById('age').value,
         preferences: document.getElementById('pref').value,
         region: document.getElementById('region').value,
@@ -348,374 +333,188 @@ async function run(weekly){
     
     try {
         const r = await fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload)});
+        if (!r.ok) { throw new Error(`Server error: ${r.status}`); }
         const data = await r.json();
         
-        if(weekly) {
-            lastWeeklyDiet = data; lastDailyDiet = null;
-            renderWeekly(data);
-        } else {
-            lastDailyDiet = data; lastWeeklyDiet = null;
-            renderDaily(data);
-        }
+        if(weekly) { lastWeeklyDiet = data; lastDailyDiet = null; renderWeekly(data); } 
+        else { lastDailyDiet = data; lastWeeklyDiet = null; renderDaily(data); }
         
-        // Trigger status check to reveal Submit button
         checkDbStatus(); 
-        
     } catch(e) {
         cards.innerHTML = `<p style="color:red; text-align:center;">Error: ${e.message}</p>`;
     }
 }
-// --- 6. SUBMIT TO DOCTOR ---
+
+// --- 6. SUBMIT TO DOCTOR (FIXED: Now reads Checkboxes) ---
 async function submitToDoctor() {
-    // 1. Get Height & Weight from HTML inputs
-    // (Make sure your HTML inputs have id="height" and id="weight")
     const h = document.getElementById('height').value;
     const w = document.getElementById('weight').value;
-    
-    // 2. Auto-Calculate BMI
-    // Formula: Weight / (Height in meters * Height in meters)
     let bmiValue = 0;
     if (h && w) {
         let h_meters = h / 100;
-        bmiValue = (w / (h_meters * h_meters)).toFixed(1); // Round to 1 decimal
+        bmiValue = (w / (h_meters * h_meters)).toFixed(1);
     }
 
-    // 3. Prepare the Plan
+    // 🟢 FIX: Read diseases from checkboxes instead of the missing 'disease' ID
+    const checkboxes = document.querySelectorAll('.disease-check:checked');
+    const selectedDiseases = Array.from(checkboxes).map(cb => cb.value).filter(d => d !== "none");
+    const diseaseString = selectedDiseases.length > 0 ? selectedDiseases.join(", ") : "None";
+
     const plan = lastWeeklyDiet ? lastWeeklyDiet : { "Today": lastDailyDiet };
     
-    // 4. Create the Payload with ALL details
     const payload = {
         username: currentUser,
-        disease: document.getElementById('disease').value,
+        disease: diseaseString, // <--- Sent as a comma-separated string (e.g., "Diabetes, Hypertension")
         age: document.getElementById('age').value,
-        height: h,          // <--- Sent to DB
-        weight: w,          // <--- Sent to DB
-        bmi: bmiValue,      // <--- Sent to DB
+        height: h, weight: w, bmi: bmiValue,
         calories: document.getElementById('cal').value,
         diet_plan: plan
     };
     
-    // 5. Send to Server
     const btn = document.getElementById('submitBtn');
     btn.innerText = "Sending...";
     
     try {
-        await fetch('/api/submit_diet', {
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
-            body: JSON.stringify(payload)
-        });
-        
-        alert("Sent to Doctor! Please wait for approval.");
+        await fetch('/api/submit_diet', {method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)});
+        alert("Sent to Doctor!");
         btn.innerText = "📤 Submit to Doctor";
-        checkDbStatus(); // Refresh immediately
+        checkDbStatus();
     } catch (error) {
-        console.error(error);
-        alert("Error sending to doctor.");
+        alert("Error sending.");
         btn.innerText = "📤 Submit to Doctor";
     }
 }
-/* --- REPLACE YOUR CURRENT getBadgeInfo WITH THIS --- */
+
+function restoreApproved() {
+    if(confirm("Discard this new draft and reload your Approved Diet?")) {
+        lastWeeklyDiet = null; lastDailyDiet = null;
+        document.getElementById("cards").innerHTML = ""; 
+        document.getElementById("submitSection").style.display = "none"; 
+        checkDbStatus(); 
+    }
+}
+
 function getBadgeInfo(dailySum, goal) {
-    // 1. Get the disease to check for Obesity logic
-    const disease = document.getElementById('disease').value.toLowerCase();
+    const checkboxes = document.querySelectorAll('.disease-check:checked');
+    const selectedVals = Array.from(checkboxes).map(cb => cb.value);
+    const isObese = selectedVals.includes("obesity");
 
     if (!goal || goal === 0) return { color: "#0369a1", bg: "#e0f2fe", text: `ℹ️ Total: ${dailySum} kcal` };
     
-    // 2. SPECIAL LOGIC FOR OBESITY (Fat Loss Zone)
-    if (disease === "obesity") {
+    if (isObese) {
         const deficit = goal - dailySum;
-        
-        // If deficit is huge (>1200), that's unsafe starvation
-        if (deficit > 1200) return { color: "#ca8a04", bg: "#fef9c3", text: `⚠️ ${dailySum} (Too Low - Eat More)` };
-        
-        // If deficit is healthy (300+), that's GOOD!
+        if (deficit > 1200) return { color: "#ca8a04", bg: "#fef9c3", text: `⚠️ ${dailySum} (Too Low)` };
         else if (deficit >= 300) return { color: "#16a34a", bg: "#dcfce7", text: `✅ ${dailySum} kcal (Fat Loss Zone 🔥)` };
-        
-        // If eating more than goal, that's bad
         else if (dailySum > goal) return { color: "#dc2626", bg: "#fee2e2", text: `⚠️ ${dailySum} (Overeating)` };
-        
-        // Maintenance
         else return { color: "#0369a1", bg: "#e0f2fe", text: `ℹ️ ${dailySum} (Maintenance)` };
     }
-
-    // 3. STANDARD LOGIC (For Diabetes, etc.)
     if (dailySum < goal - 400) return { color: "#ca8a04", bg: "#fef9c3", text: `⚠️ ${dailySum}/${goal} (Low)` }; 
     else if (dailySum > goal + 400) return { color: "#dc2626", bg: "#fee2e2", text: `⚠️ ${dailySum}/${goal} (High)` }; 
     else return { color: "#16a34a", bg: "#dcfce7", text: `✅ ${dailySum}/${goal} (Perfect)` }; 
 }
 
-// 2. HELPER: Draw the Yellow Snack Bar
 function drawSnackBar(snackItem) {
     if (!snackItem) return;
     const div = document.createElement("div");
     div.className = "snack-bar";
-    div.innerHTML = `
-        <span style="font-size:24px;">🍎</span>
-        <div>
-            <b>Recommended Snack:</b> ${snackItem.food} 
-            <span style="background:#fff; padding:2px 8px; border-radius:4px; border:1px solid #d97706; margin-left:8px; font-size:12px;">
-                ${snackItem.calories} kcal
-            </span>
-        </div>
-    `;
+    div.innerHTML = `<span style="font-size:24px;">🍎</span><div><b>Recommended Snack:</b> ${snackItem.food} <span style="background:#fff; padding:2px 8px; border-radius:4px; border:1px solid #d97706; margin-left:8px; font-size:12px;">${snackItem.calories} kcal</span></div>`;
     document.getElementById("cards").appendChild(div);
 }
 
-// 3. HELPER: Better Icons
 function getIcon(n) { return n.includes("Chicken")?"🍗": n.includes("Egg")?"🥚": n.includes("Rice")?"🍚": n.includes("Fish")?"🐟": n.includes("Fruit")?"🍎": "🍲"; }
 
-// 4. MAIN CARD CREATOR (Restores Charts & Labels)
 function mkCard(meal, item){
   const div = document.createElement("div");
   div.className = "card";
-  
-  div.innerHTML = `
-    <div class="meal-badge">${meal.toUpperCase()}</div>
-    <div style="font-size: 40px; text-align: center; margin-bottom: 5px;">${getIcon(item.food)}</div>
-    <div style="font-size:18px; font-weight:700; text-align: center; margin-bottom: 8px;">${item.food}</div>
-    <div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 8px; border-radius: 6px; margin-bottom: 10px; text-align:center;">
-        Calories: <b>${item.calories}</b> &bull; P: ${item.protein}g &bull; F: ${item.fat}g &bull; C: ${item.carbs}g
-    </div>
-    <canvas></canvas>
-    <div class="labels-grid">
-      <div>Diabetes: <b>${item.diabetes_label || 'Safe'}</b></div>
-      <div>BP: <b>${item.hypertension_label || 'Safe'}</b></div>
-      <div style="grid-column: 1/-1">CVD Safety: <b>${item.cvd_label || 'Safe'}</b></div>
-    </div>
-  `;
-
-  // Restore the Chart
+  div.innerHTML = `<div class="meal-badge">${meal.toUpperCase()}</div><div style="font-size: 40px; text-align: center; margin-bottom: 5px;">${getIcon(item.food)}</div><div style="font-size:18px; font-weight:700; text-align: center; margin-bottom: 8px;">${item.food}</div><div style="font-size: 13px; color: #64748b; background: #f8fafc; padding: 8px; border-radius: 6px; margin-bottom: 10px; text-align:center;">Calories: <b>${item.calories}</b> &bull; P: ${item.protein}g &bull; F: ${item.fat}g &bull; C: ${item.carbs}g</div><canvas></canvas><div class="labels-grid"><div>Diabetes: <b>${item.diabetes_label || 'Safe'}</b></div><div>BP: <b>${item.hypertension_label || 'Safe'}</b></div><div style="grid-column: 1/-1">CVD Safety: <b>${item.cvd_label || 'Safe'}</b></div></div>`;
   setTimeout(() => {
     new Chart(div.querySelector("canvas").getContext("2d"), {
       type: "bar",
       data: {
         labels: ["Prot","Carbs","Fat","Sugar","Sodium"],
-        datasets: [{ 
-            data: [item.protein||0, item.carbs||0, item.fat||0, item.sugar||0, (item.sodium||0)/100], 
-            backgroundColor: ["#3b82f6","#f97316","#ef4444","#64748b","#22c55e"], 
-            borderRadius: 4 
-        }]
+        datasets: [{ data: [item.protein||0, item.carbs||0, item.fat||0, item.sugar||0, (item.sodium||0)/100], backgroundColor: ["#3b82f6","#f97316","#ef4444","#64748b","#22c55e"], borderRadius: 4 }]
       },
-      options: { 
-        responsive: true, 
-        maintainAspectRatio: false, 
-        plugins:{legend:{display:false}}, 
-        scales:{y:{display:false}, x:{grid:{display:false}}} 
-      }
+      options: { responsive: true, maintainAspectRatio: false, plugins:{legend:{display:false}}, scales:{y:{display:false}, x:{grid:{display:false}}} }
     });
   }, 0);
-  
   return div;
 }
 
-// 5. RENDER WEEKLY (Restores Headers & Badges)
 function renderWeekly(data) {
-    const c = document.getElementById("cards"); 
-    c.innerHTML = "";
+    const c = document.getElementById("cards"); c.innerHTML = "";
     const goal = Number(document.getElementById('cal').value) || 0;
-    
     const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     days.forEach(day => {
         if(!data[day]) return;
-
-        // Calculate Totals for Badge
         let dailySum = 0;
         ['breakfast','lunch','dinner'].forEach(m => { if(data[day][m]) dailySum += data[day][m].calories; });
         if(data[day].snack) dailySum += data[day].snack.calories;
         const badge = getBadgeInfo(dailySum, goal);
-
-        // Header with Badge
         const head = document.createElement("div");
-        head.style.gridColumn = "1/-1"; 
-        head.style.borderBottom = "2px solid #e2e8f0"; 
-        head.style.marginTop = "30px"; 
-        head.style.paddingBottom = "5px";
-        head.style.display = "flex";
-        head.style.justifyContent = "space-between";
-        head.style.alignItems = "center";
-        head.innerHTML = `
-            <h3 style="color:#1e293b; margin:0;">${day.toUpperCase()}</h3>
-            <div style="font-size:13px; font-weight:bold; color:${badge.color}; background:${badge.bg}; padding:6px 12px; border-radius:20px;">${badge.text}</div>
-        `;
+        head.style.gridColumn = "1/-1"; head.style.borderBottom = "2px solid #e2e8f0"; head.style.marginTop = "30px"; head.style.paddingBottom = "5px"; head.style.display = "flex"; head.style.justifyContent = "space-between"; head.style.alignItems = "center";
+        head.innerHTML = `<h3 style="color:#1e293b; margin:0;">${day.toUpperCase()}</h3><div style="font-size:13px; font-weight:bold; color:${badge.color}; background:${badge.bg}; padding:6px 12px; border-radius:20px;">${badge.text}</div>`;
         c.appendChild(head);
-        
         ["breakfast","lunch","dinner"].forEach(m => { if(data[day][m]) c.appendChild(mkCard(m, data[day][m])); });
         if(data[day].snack) drawSnackBar(data[day].snack);
     });
 }
 
-// 6. RENDER DAILY (Restores Snack Bar)
 function renderDaily(data) {
-    const c = document.getElementById("cards"); 
-    c.innerHTML = "";
-    
-    // 1. Calculate Total Calories for the day
+    const c = document.getElementById("cards"); c.innerHTML = "";
     let dailySum = 0;
     ["breakfast","lunch","dinner"].forEach(m => { if(data[m]) dailySum += data[m].calories; });
     if(data.snack) dailySum += data.snack.calories;
-    
-    // 2. Get the Badge (Perfect/Fat Loss/Low)
     const goal = Number(document.getElementById('cal').value) || 0;
     const badge = getBadgeInfo(dailySum, goal);
-    
-    // 3. Display the Status Badge above the cards
-    // We use the 'status' div which sits right above the cards container
     const statusDiv = document.getElementById("status");
-    if(statusDiv) {
-        statusDiv.innerHTML = `<div style="background:${badge.bg}; padding:15px; border-radius:8px; text-align:center; font-size:16px; border:1px solid ${badge.color}; color:${badge.color}; margin-bottom: 20px; font-weight:bold;">${badge.text}</div>`;
-    }
-
-    // 4. Draw Cards
+    if(statusDiv) statusDiv.innerHTML = `<div style="background:${badge.bg}; padding:15px; border-radius:8px; text-align:center; font-size:16px; border:1px solid ${badge.color}; color:${badge.color}; margin-bottom: 20px; font-weight:bold;">${badge.text}</div>`;
     ["breakfast","lunch","dinner"].forEach(m => { if(data[m]) c.appendChild(mkCard(m, data[m])); });
-    
-    // 5. Draw Snack
     if(data.snack) drawSnackBar(data.snack);
 }
 
-// --- 8. PDF DOWNLOAD (FIXED) ---
 document.getElementById('downloadPdfBtn').onclick = async () => {
     let pdfData = null;
     if (lastWeeklyDiet) pdfData = lastWeeklyDiet;
     else if (lastDailyDiet) pdfData = { "Today's Plan": lastDailyDiet }; 
     else { alert("Please generate a diet plan first!"); return; }
-
-    const btn = document.getElementById('downloadPdfBtn');
-    btn.innerText = "Generating PDF...";
+    const btn = document.getElementById('downloadPdfBtn'); btn.innerText = "Generating PDF...";
     try {
         const r = await fetch("/download_weekly_pdf", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({weekly_diet: pdfData})});
         const blob = await r.blob();
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = "Personalized_Diet_Plan.pdf";
-        a.click();
+        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "Personalized_Diet_Plan.pdf"; a.click();
     } catch(e) { alert("Error downloading PDF"); } 
     finally { btn.innerText = "Download PDF Report"; }
 };
 
-// --- 9. CHATBOT LOGIC ---
-function toggleChat() {
-    const b = document.getElementById('chatBody');
-    const i = document.getElementById('chatInputArea');
-    const isHidden = b.style.display === 'none' || b.style.display === '';
-    b.style.display = isHidden ? 'block' : 'none';
-    i.style.display = isHidden ? 'flex' : 'none';
-}
-async function askAI() {
-    const q = document.getElementById('aiQuery').value;
-    if(!q) return;
-    document.getElementById('chatBody').innerHTML += `<div class="user-msg">${q}</div>`;
-    document.getElementById('aiQuery').value = "";
-    
-    // Auto-scroll
-    const chatBody = document.getElementById('chatBody');
-    chatBody.scrollTop = chatBody.scrollHeight;
-
-    const r = await fetch('/chat_ai', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({query:q, context:"Patient"})});
-    const d = await r.json();
-    document.getElementById('chatBody').innerHTML += `<div class="ai-msg">${d.reply}</div>`;
-    chatBody.scrollTop = chatBody.scrollHeight;
-}
-
+function toggleChat() { const b = document.getElementById('chatBody'); const i = document.getElementById('chatInputArea'); const isHidden = b.style.display === 'none' || b.style.display === ''; b.style.display = isHidden ? 'block' : 'none'; i.style.display = isHidden ? 'flex' : 'none'; }
+async function askAI() { const q = document.getElementById('aiQuery').value; if(!q) return; document.getElementById('chatBody').innerHTML += `<div class="user-msg">${q}</div>`; document.getElementById('aiQuery').value = ""; const chatBody = document.getElementById('chatBody'); chatBody.scrollTop = chatBody.scrollHeight; const r = await fetch('/chat_ai', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({query:q, context:"Patient"})}); const d = await r.json(); document.getElementById('chatBody').innerHTML += `<div class="ai-msg">${d.reply}</div>`; chatBody.scrollTop = chatBody.scrollHeight; }
 function logout() { sessionStorage.clear(); window.location.href = "/"; }
+async function openHistory() { document.getElementById("historyModal").style.display = "flex"; const list = document.getElementById("historyList"); list.innerHTML = "Loading records..."; try { const r = await fetch('/api/user_history', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ username: currentUser }) }); const data = await r.json(); if (data.length === 0) { list.innerHTML = "<p>No approved history found.</p>"; return; } let html = ""; data.forEach(item => { const planString = encodeURIComponent(JSON.stringify(item.diet_plan)); html += `<div class="history-item"><div class="history-info"><b>Date:</b> ${item.timestamp}<br><b>Note:</b> ${item.doctor_comment}</div><button class="btn-load" onclick="loadHistoricalPlan('${planString}')">📂 Load This Plan</button></div>`; }); list.innerHTML = html; } catch(e) { list.innerHTML = "Error fetching history."; } }
+function closeHistory() { document.getElementById("historyModal").style.display = "none"; }
+function loadHistoricalPlan(planString) { isHistoryMode = true; const plan = JSON.parse(decodeURIComponent(planString)); if (plan["Mon"]) { lastWeeklyDiet = plan; lastDailyDiet = null; renderWeekly(plan); } else { lastDailyDiet = plan["Today"] || plan; lastWeeklyDiet = null; renderDaily(lastDailyDiet); } const box = document.getElementById('doctorStatus'); const submitSection = document.getElementById('submitSection'); if(submitSection) submitSection.style.display = "none"; box.style.display = "block"; box.style.background = "#e0f2fe"; box.style.border = "1px solid #2563eb"; box.style.color = "#1e40af"; box.innerHTML = `<h3>📂 Loaded from History</h3><p>You are viewing a past approved plan.</p><button onclick="exitHistoryMode()" style="margin-top:10px; background:#2563eb; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">↩ Back to Live Dashboard</button>`; closeHistory(); }
+function exitHistoryMode() { isHistoryMode = false; document.getElementById("cards").innerHTML = ""; document.getElementById('doctorStatus').style.display = "none"; lastWeeklyDiet = null; lastDailyDiet = null; checkDbStatus(); }
+// --- 🟢 NEW: SMART CHECKBOX LOGIC (Mutually Exclusive) ---
+document.addEventListener('DOMContentLoaded', function() {
+    const allCheckboxes = document.querySelectorAll('.disease-check');
+    const noneCheckbox = document.querySelector('.disease-check[value="none"]');
 
-// --- HISTORY FUNCTIONS ---
-async function openHistory() {
-    document.getElementById("historyModal").style.display = "flex";
-    const list = document.getElementById("historyList");
-    list.innerHTML = "Loading records...";
-
-    try {
-        const r = await fetch('/api/user_history', {
-            method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ username: currentUser })
+    allCheckboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+            // CASE A: User clicked "None / Healthy"
+            if (this.value === 'none' && this.checked) {
+                // Uncheck everything else
+                allCheckboxes.forEach(other => {
+                    if (other !== this) other.checked = false;
+                });
+            } 
+            // CASE B: User clicked a Disease (e.g. Diabetes)
+            else if (this.checked) {
+                // Uncheck "None" if it was checked
+                if (noneCheckbox) noneCheckbox.checked = false;
+            }
         });
-        const data = await r.json();
-
-        if (data.length === 0) {
-            list.innerHTML = "<p>No approved history found.</p>";
-            return;
-        }
-
-        let html = "";
-        data.forEach(item => {
-            const planString = encodeURIComponent(JSON.stringify(item.diet_plan));
-            
-            html += `
-            <div class="history-item">
-                <div class="history-info">
-                    <b>Date:</b> ${item.timestamp}<br>
-                    <b>Note:</b> ${item.doctor_comment}
-                </div>
-                <button class="btn-load" onclick="loadHistoricalPlan('${planString}')">📂 Load This Plan</button>
-            </div>`;
-        });
-        list.innerHTML = html;
-    } catch(e) {
-        list.innerHTML = "Error fetching history.";
-    }
-}
-
-function closeHistory() {
-    document.getElementById("historyModal").style.display = "none";
-}
-
-function loadHistoricalPlan(planString) {
-    // 🟢 1. Turn ON History Mode (Stops background updates)
-    isHistoryMode = true; 
-
-    const plan = JSON.parse(decodeURIComponent(planString));
-    
-    // Update Global Variables so PDF works
-    if (plan["Mon"]) {
-        lastWeeklyDiet = plan;
-        lastDailyDiet = null;
-        renderWeekly(plan);
-    } else {
-        lastDailyDiet = plan["Today"] || plan;
-        lastWeeklyDiet = null;
-        renderDaily(lastDailyDiet);
-    }
-
-    // Update UI to show this is a loaded plan
-    const box = document.getElementById('doctorStatus');
-    const submitSection = document.getElementById('submitSection');
-    
-    // Hide "Submit" button (You can't submit old history)
-    if(submitSection) submitSection.style.display = "none";
-
-    box.style.display = "block";
-    box.style.background = "#e0f2fe"; 
-    box.style.border = "1px solid #2563eb";
-    box.style.color = "#1e40af";
-    
-    // 🟢 2. Add the "Back" Button
-    box.innerHTML = `
-        <h3>📂 Loaded from History</h3>
-        <p>You are viewing a past approved plan.</p>
-        <button onclick="exitHistoryMode()" style="margin-top:10px; background:#2563eb; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:bold;">
-            ↩ Back to Live Dashboard
-        </button>
-    `;
-    
-    closeHistory();
-}
-
-// 🟢 3. NEW FUNCTION: Exit History Mode
-function exitHistoryMode() {
-    isHistoryMode = false; // Allow updates again
-    
-    // Clear screen
-    document.getElementById("cards").innerHTML = "";
-    document.getElementById('doctorStatus').style.display = "none";
-    
-    // Reset variables
-    lastWeeklyDiet = null;
-    lastDailyDiet = null;
-
-    // Refresh immediately to show current DB status
-    checkDbStatus();
-}
+    });
+});
 </script>
 </body>
 </html>

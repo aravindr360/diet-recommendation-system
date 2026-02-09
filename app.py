@@ -68,16 +68,18 @@ def init_db():
 
 # Run DB setup on start
 init_db()
-# --- HELPER FUNCTIONS (UPDATED WITH REGION + PCOS PROTEIN FIX) ---
-def generate_smart_daily_plan(disease, age, pref, region, target_cal):
+
+# --- HELPER FUNCTIONS (UPDATED FOR MULTI-DISEASE) ---
+def generate_smart_daily_plan(diseases, age, pref, region, target_cal):
     safe_foods = foods.copy()
     
-    # 1. Filter by Disease (The "Secret Filter")
-    # This removes unsafe foods (e.g., High Sugar for Diabetes/PCOS)
-    if disease:
-        col_name = f"{disease.lower()}_label"
-        if col_name in safe_foods.columns:
-            safe_foods = safe_foods[safe_foods[col_name] == 'Recommended']
+    # 1. LOOP through ALL selected diseases (The Intersection Logic)
+    # This handles the list like ['diabetes', 'hypertension']
+    if diseases:
+        for disease in diseases:
+            col_name = f"{disease.lower()}_label"
+            if col_name in safe_foods.columns:
+                safe_foods = safe_foods[safe_foods[col_name] == 'Recommended']
     
     # 2. Filter by Age
     if age < 12: target = ["Kids", "All"]
@@ -85,12 +87,11 @@ def generate_smart_daily_plan(disease, age, pref, region, target_cal):
     else: target = ["Adults", "All"]
     safe_foods = safe_foods[safe_foods["target_audience"].isin(target)]
     
-    # 3. Filter by Diet Preference (Veg vs Non-Veg)
+    # 3. Filter by Diet Preference
     if pref == 'veg': 
         safe_foods = safe_foods[safe_foods['food_type'] == 'Veg']
 
-    # 4. 🟢 NEW: Filter by Region (North vs South)
-    # We keep the selected region PLUS "All" (Neutral foods like fruits, eggs, oats)
+    # 4. Filter by Region
     if region and region != "All":
         target_regions = [region, "All"]
         if "region" in safe_foods.columns:
@@ -98,50 +99,43 @@ def generate_smart_daily_plan(disease, age, pref, region, target_cal):
 
     # --- PORTION CONTROL ENGINE ---
     def get_meal(m_type, scale_cap=2.0):
-        # A. Select Food Options
         options = safe_foods[safe_foods['meal_type'] == m_type]
         if options.empty: return None
 
-        # 🟢 PCOS PRO TWEAK: Prioritize High Protein
-        # If PCOS, we don't just pick randomly. We sort by Protein (Highest first)
-        # and pick from the top 5 options.
-        if disease and disease.lower() == "pcos":
+        # Check if special conditions exist in the list
+        # We convert list to lower case to be safe: ['Diabetes'] -> ['diabetes']
+        active_conditions = [d.lower() for d in diseases]
+        has_pcos = "pcos" in active_conditions
+        has_diabetes = "diabetes" in active_conditions
+        has_obesity = "obesity" in active_conditions
+
+        # PCOS Priority: High Protein
+        if has_pcos:
             options = options.sort_values(by='protein', ascending=False).head(5)
 
-        # Pick one random item from the available options
         item = options.sample(1).iloc[0].to_dict()
         
-        # B. Calculate Scale (Portion Size)
+        # Calculate Scale
         base_cal = item['calories']
         required = target_cal / 3
         raw_scale = required / base_cal
         
-        # C. Medical Safety Logic (Preserved)
-        is_diabetic = disease and disease.lower() == "diabetes"
-        is_obese = disease and disease.lower() == "obesity"
-
-        if is_diabetic:
-            # Diabetes: Strict Cap (0.8x to 1.2x) to prevent spikes
+        # Safety Logic for Comorbidities
+        if has_diabetes:
             scale = 1.2 if raw_scale > 1.2 else (0.8 if raw_scale < 0.8 else raw_scale)
-
-        elif is_obese:
-            # Obesity: Allow Small Portions (0.7x) for deficit
-            # Strict Cap at 1.1x (No large portions)
+        elif has_obesity:
             scale = min(raw_scale, 1.1) 
-            if scale < 0.7: scale = 0.7 # Minimum limit
-
+            if scale < 0.7: scale = 0.7 
         else:
-            # Normal Logic (Hypertension, CVD, etc.)
             scale = min(raw_scale, 1.5)
-            if scale < 1.0: scale = 1.0 # Standard users eat normal size
+            if scale < 1.0: scale = 1.0 
 
         scale = round(scale * 2) / 2
         
-        # D. Rename Logic
+        # Apply changes
         if scale >= 1.4: item['food'] += " (Large Portion)"
         elif scale <= 0.8: item['food'] += " (Small Portion)" 
             
-        # E. Apply Nutrients
         item['calories'] = int(item['calories'] * scale)
         item['protein'] = round(item['protein'] * scale, 1)
         item['carbs'] = round(item['carbs'] * scale, 1)
@@ -154,16 +148,16 @@ def generate_smart_daily_plan(disease, age, pref, region, target_cal):
     lunch = get_meal("Lunch")
     dinner = get_meal("Dinner")
     
-    # Calculate totals
-    b_cal = breakfast['calories'] if breakfast else 0
-    l_cal = lunch['calories'] if lunch else 0
-    d_cal = dinner['calories'] if dinner else 0
-    current_total = b_cal + l_cal + d_cal
-    
+    # Snack Logic (Skip if Obese)
     snack = None
-    # Add snack if calories are low (BUT skip snack for Obesity to maintain deficit)
-    if disease and disease.lower() != "obesity":
-        if current_total < (target_cal - 250):
+    has_obesity = "obesity" in [d.lower() for d in diseases]
+    
+    total_cal = (breakfast['calories'] if breakfast else 0) + \
+                (lunch['calories'] if lunch else 0) + \
+                (dinner['calories'] if dinner else 0)
+
+    if not has_obesity:
+        if total_cal < (target_cal - 250):
             snack = get_meal("Snack", scale_cap=1.5)
             
     return {"breakfast": breakfast, "lunch": lunch, "dinner": dinner, "snack": snack}
@@ -212,43 +206,43 @@ def register():
         return jsonify({"status": "success"})
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "msg": "Username already exists"})
-
-# --- 🥗 DIET GENERATION ---
+    
+# --- 🥗 DIET GENERATION ROUTES (UPDATED) ---
 @app.route("/get_diet", methods=["POST"])
 def get_diet():
     data = request.json
+    # 🟢 Get LIST of diseases (default to empty list if missing)
+    diseases = data.get("diseases", []) 
+    
     age = int(data.get("age", 30))
     pref = data.get("preferences", "non-veg")
-    region = data.get('region', 'All')  # You got it here...
-    disease = data.get("disease", "diabetes")
+    region = data.get('region', 'All')
     target_cal = int(data.get("daily_calorie", 1800))
 
-    # 🟢 FIX 1: AUTO-DEFICIT FOR OBESITY
-    if disease.lower() == "obesity":
-        target_cal = max(1200, target_cal - 500) 
+    # Auto-Deficit if Obesity is in the list
+    if "obesity" in [d.lower() for d in diseases]:
+        target_cal = max(1200, target_cal - 500)
 
-    # 🔴 YOU MISSED IT HERE. ADD 'region' TO THE LIST:
-    plan = generate_smart_daily_plan(disease, age, pref, region, target_cal) # <--- PASS THIS
+    # Pass the LIST (diseases) and REGION to the function
+    plan = generate_smart_daily_plan(diseases, age, pref, region, target_cal)
     return jsonify(plan)
 
 @app.route("/get_weekly_diet", methods=["POST"])
 def get_weekly_diet():
     data = request.json
+    diseases = data.get("diseases", [])
     age = int(data.get("age", 30))
     pref = data.get("preferences", "non-veg")
-    region = data.get('region', 'All')  # You got it here...
-    disease = data.get("disease", "diabetes")
+    region = data.get('region', 'All')
     target_cal = int(data.get("daily_calorie", 1800))
     
-    # 🟢 FIX 1: AUTO-DEFICIT FOR OBESITY
-    if disease.lower() == "obesity":
+    if "obesity" in [d.lower() for d in diseases]:
         target_cal = max(1200, target_cal - 500)
 
     week = {}
     days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     for day in days:
-        # 🔴 YOU MISSED IT HERE TOO:
-        week[day] = generate_smart_daily_plan(disease, age, pref, region, target_cal) # <--- PASS THIS
+        week[day] = generate_smart_daily_plan(diseases, age, pref, region, target_cal)
     
     return jsonify(week)
 
