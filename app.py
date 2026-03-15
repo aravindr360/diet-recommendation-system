@@ -15,7 +15,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # --- 🟢 CONFIGURATION ---
-genai.configure(api_key="AIzaSyCtqchXbO9VXQ4QZfJhSoNxrD8zAFpY8-o")
+genai.configure(api_key="AIzaSyBvblC5SRlzLvQhlABfyYJVZtI6gyhap-o")
 
 # --- LOAD MODELS & DATA ---
 models = {
@@ -381,16 +381,33 @@ def download_weekly_pdf():
     buffer.seek(0)
     return send_file(buffer, as_attachment=True, download_name="diet_plan.pdf", mimetype="application/pdf")
 
-# --- 🤖 CHATBOT (KEPT) ---
+# --- 🤖 CHATBOT (Standard Model) ---
 @app.route("/chat_ai", methods=["POST"])
 def chat_ai():
     data = request.json
+    user_query = data.get('query')
+    
     try:
+        # 🟢 CHANGED: 'gemini-1.5-flash' -> 'gemini-2.0-flash'
+        # This model was explicitly found in your test list!
         model = genai.GenerativeModel('gemini-flash-latest')
-        response = model.generate_content(f"Medical AI: {data.get('query')}")
+        
+        prompt = f"""
+        You are an expert Medical Nutritionist AI. 
+        The user asked: "{user_query}"
+        
+        Answer strictly about diet, nutrition, diseases (Diabetes, BP, etc.), and health. 
+        If the user asks about something else, politely refuse.
+        Keep the answer short (under 50 words) and helpful.
+        """
+        
+        response = model.generate_content(prompt)
         return jsonify({"reply": response.text})
-    except:
-        return jsonify({"reply": "AI Error. Try again."})
+        
+    except Exception as e:
+        print(f"❌ AI ERROR: {e}") 
+        return jsonify({"reply": "I am having trouble connecting. Please check the server terminal for details."})
+    
 # --- 📜 NEW: GET USER HISTORY ---
 @app.route("/api/user_history", methods=["POST"])
 def user_history():

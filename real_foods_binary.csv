@@ -1,0 +1,375 @@
+food,calories,protein,carbs,fat,sugar,sodium,gi,diabetes_label,hypertension_label,cvd_label,pcos_label,obesity_label,meal_type,target_audience,food_type,region
+"Idli (3 pcs) w/ Sambar, Coconut Chutney & Vadai",450,14.0,60.0,18.0,2.0,600,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Masala Dosa (Large) w/ Sambar & 1 Boiled Egg,520,16.0,65.0,22.0,2.0,550,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Non-Veg,South
+"Oats Porridge (Large) w/ Apple, Honey & Walnuts",420,14.0,55.0,18.0,12.0,120,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,All
+Veg Upma (Large Bowl) w/ Peanuts & Coconut Chutney,400,10.0,52.0,18.0,2.0,350,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+"Poha (Full Plate) w/ Peanuts, Sev & Sprout Salad",450,12.0,60.0,20.0,2.0,300,60,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+"Scrambled Eggs (3) w/ Spinach, 2 Toast & Butter",460,24.0,32.0,26.0,1.5,450,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Cheese Masala Omelette (2 Eggs) w/ 2 Multigrain Toast,480,26.0,30.0,28.0,2.0,550,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+"Brown Rice (1.5 Cup) w/ Dal Tadka, Veggie Stir Fry & Curd",620,18.0,85.0,22.0,3.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+"Curd Rice (Large Bowl) w/ Pomegranate, Tadka & Roasted Papad",450,12.0,55.0,18.0,5.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+"Chapati (3) w/ Bhindi Masala, Dal & Cucumber Salad",580,20.0,75.0,22.0,3.0,500,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+"Fish Curry Meal: Rice (1 Cup), Fish (2 pcs) & Thoran",650,40.0,60.0,28.0,2.0,600,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+"Chicken Biryani Combo: Biryani (Bowl), Raita, Egg & Salad",750,35.0,80.0,30.0,4.0,850,65,Risky,Risky,Risky,Risky,Risky,Lunch,Adults,Non-Veg,All
+Grilled Chicken Breast (250g) w/ Quinoa Salad & Hummus,550,55.0,35.0,22.0,2.0,450,30,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+"Rajma Chawal Combo: Rice, Rajma, Jeera Aloo & Curd",680,22.0,90.0,24.0,3.0,600,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Veg,North
+Lemon Rice (Full) w/ 2 Boiled Eggs & Cucumber,520,18.0,65.0,20.0,2.0,600,65,Safe,Risky,Safe,Safe,Risky,Lunch,Kids,Non-Veg,South
+"Veg Khichdi (Large Bowl) w/ Ghee, Kadhi & Papad",550,16.0,75.0,20.0,2.0,500,50,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,North
+Phulka (3) w/ Palak Paneer & Sprout Salad,580,24.0,65.0,26.0,3.0,550,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+"Chicken Curry Combo: 2 Roti, Chicken Curry (Bowl) & Salad",620,38.0,50.0,28.0,2.0,600,55,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,North
+Grilled Fish (Full) w/ Sautéed Veggies & Mashed Potato,500,45.0,30.0,20.0,2.0,400,35,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+"Fruit Salad Bowl w/ Yogurt, Honey & Chia Seeds",280,6.0,45.0,8.0,25.0,40,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Mixed Nuts & Seeds (Large Bowl) w/ Dried Cranberries,320,10.0,20.0,24.0,12.0,10,25,Safe,Safe,Safe,Safe,Risky,Snack,All,Veg,All
+Green Tea w/ 2 Digestive Biscuits & Almonds,160,5.0,22.0,8.0,4.0,90,45,Safe,Safe,Safe,Safe,Safe,Snack,Seniors,Veg,All
+Peanut Butter Banana Toast (2 Slices),350,12.0,45.0,16.0,14.0,200,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,All
+"Protein Smoothie: Banana, Milk, Whey & Peanut Butter",380,28.0,35.0,12.0,18.0,150,50,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Rice Gruel (Kanji) w/ Moong Dal & Coconut Chammanthi,350,12.0,55.0,8.0,1.0,250,60,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Millet Dosa (3 pcs) w/ Coconut Chutney & Sambar,420,12.0,65.0,14.0,2.0,450,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Chole Bhature (2 Large) w/ Lassi,850,22.0,95.0,40.0,15.0,900,75,Risky,Risky,Risky,Risky,Risky,Lunch,Adults,Veg,North
+Egg Bhurji (3 Eggs) w/ 2 Chapati & Salad,480,26.0,40.0,24.0,2.0,500,50,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,North
+"Cream of Mushroom Soup, Garlic Bread (2) & Grilled Veggies",420,10.0,55.0,18.0,4.0,650,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Paneer Tikka (6 pcs) w/ Mint Chutney & Salad,340,24.0,12.0,22.0,2.0,400,35,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Roasted Makhana (Large Bowl) & Handful of Almonds,220,6.0,28.0,10.0,1.0,100,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Sprouted Moong Salad (Large) w/ Peanuts & Lemon,280,18.0,35.0,10.0,3.0,250,25,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Boiled Chana Chaat (Large) w/ Onions & Tomato,320,16.0,45.0,6.0,2.0,300,30,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,North
+Masala Buttermilk (2 Glasses) & Roasted Papad,120,6.0,10.0,6.0,0.0,300,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Cucumber Sticks w/ Hummus Dip & Olives,250,8.0,22.0,16.0,1.0,300,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Boiled Egg Whites (4) & Apple Slices,180,16.0,20.0,1.0,12.0,250,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Non-Veg,All
+Chicken Clear Soup (Large Bowl) w/ Croutons,180,18.0,15.0,5.0,1.0,550,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Non-Veg,All
+Papaya Bowl (Large) w/ Lime & Chia Seeds,120,2.0,28.0,1.0,18.0,5,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+"Greek Yogurt Bowl w/ Berries, Honey & Granola",320,18.0,40.0,10.0,15.0,60,25,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Roasted Peanuts (Handful) & Jaggery Cube,250,9.0,15.0,18.0,10.0,5,15,Safe,Safe,Safe,Safe,Risky,Snack,Adults,Veg,All
+Sweet Corn Cup (Buttered) w/ Pepper,180,5.0,32.0,6.0,4.0,150,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,All
+Clear Veg Soup w/ Croutons & Cheese Cube,200,6.0,22.0,10.0,2.0,450,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Ragi Biscuits (4) & Masala Chai,220,4.0,35.0,8.0,8.0,80,60,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Orange (Medium) & Walnuts (4),180,4.0,22.0,10.0,12.0,0,35,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Guava Slices w/ Chili Salt,60,3.5,18.0,0.5,10.0,150,30,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Grilled Paneer (150g) w/ Seasoning,350,28.0,6.0,26.0,1.0,200,30,Safe,Safe,Risky,Safe,Safe,Snack,All,Veg,North
+Edamame Beans (Steamed - Large Bowl),200,18.0,16.0,8.0,2.0,20,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Watermelon Bowl w/ Feta Cheese & Mint,220,8.0,25.0,12.0,18.0,150,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Multigrain Toast (2) w/ Avocado Smash,380,10.0,35.0,22.0,1.0,250,45,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Dates (4) & Walnuts (5),300,6.0,45.0,15.0,35.0,0,40,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Besan Chilla (2) w/ Curd & Pickle,350,14.0,38.0,12.0,2.0,350,35,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Chia Seed Pudding w/ Almond Milk & Berries,240,8.0,22.0,14.0,5.0,30,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Methi Thepla (3) w/ Curd & Pickle,480,12.0,60.0,18.0,2.0,500,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Multigrain Sandwich (Paneer/Veg) w/ Salad,420,18.0,50.0,16.0,4.0,550,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,All
+"Ragi Porridge w/ Jaggery, Milk & Nuts",320,8.0,55.0,8.0,15.0,80,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Moong Dal Chilla (3) w/ Paneer Stuffing,450,22.0,45.0,18.0,2.0,400,40,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Aloo Paratha (2) w/ Curd & Butter,650,12.0,85.0,28.0,4.0,600,70,Safe,Safe,Safe,Safe,Safe,Breakfast,Kids,Veg,North
+Soya Chunks Curry w/ 2 Rotis & Salad,480,28.0,55.0,14.0,3.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Dal Tadka w/ Jeera Rice & Veg Salad,450,16.0,65.0,14.0,2.0,480,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Fish Moilee (Coconut Stew) & Rice (1 Cup),550,30.0,45.0,26.0,2.0,500,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+"Quinoa Salad w/ Chickpeas, Feta & Olives",420,16.0,50.0,18.0,3.0,300,35,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+"Ragi Mudde w/ Sambar, Greens & Ghee",450,12.0,75.0,10.0,1.0,350,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Egg Curry (2 Eggs) w/ Rice & Salad,480,20.0,55.0,18.0,2.0,480,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Paneer Butter Masala & 2 Naan Combo,850,22.0,90.0,45.0,8.0,900,70,Risky,Risky,Risky,Safe,Risky,Lunch,Adults,Veg,North
+Chicken Stew w/ 3 Appam,550,26.0,65.0,18.0,3.0,500,50,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,South
+"Bajra Khichdi w/ Ghee, Curd & Pickle",420,12.0,55.0,16.0,1.0,350,45,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,North
+Tofu Stir Fry w/ Brown Rice & Sesame,450,24.0,52.0,16.0,2.0,400,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Bottle Gourd (Lauki) Sabzi & 3 Phulka,380,12.0,60.0,10.0,4.0,300,40,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,North
+Paneer Bhurji w/ 2 Chapati & Salad,520,24.0,45.0,26.0,3.0,450,50,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Mutton Rogan Josh w/ Rice & Salad,750,35.0,55.0,42.0,2.0,700,60,Risky,Risky,Risky,Risky,Risky,Dinner,Adults,Non-Veg,North
+Dahi Vada (2 pcs - Non Fried) w/ Chutney,280,10.0,35.0,10.0,5.0,300,45,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Sweet Potato Chaat (Bowl) w/ Lemon & Peanuts,240,5.0,45.0,4.0,10.0,200,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Broccoli & Almond Soup (Bowl) w/ Toast,200,8.0,25.0,8.0,3.0,400,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Besan Ladoo (1 Pc - Sugar Free),120,4.0,14.0,6.0,0.0,10,40,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Chicken Tikka (6 pcs) w/ Salad,320,35.0,4.0,18.0,1.0,550,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Non-Veg,North
+Baked Fish Fingers (5 pcs) w/ Dip,280,25.0,18.0,10.0,0.5,450,45,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Non-Veg,All
+Quinoa Upma (Large Bowl) w/ Veggies,300,10.0,45.0,8.0,2.0,300,45,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Oats Idli (3 pcs) with Coconut Chutney,280,9.0,42.0,6.0,1.5,400,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Scrambled Tofu (Large) & 2 Toast,350,22.0,30.0,14.0,2.0,450,40,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,All
+Millet Porridge (Bowl) w/ Nuts,260,8.0,42.0,6.0,4.0,120,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,All
+Buckwheat Dosa (3 pcs) with Mint Chutney,320,10.0,48.0,8.0,1.5,400,45,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Spinach & Corn Sandwich (Grilled),340,12.0,45.0,12.0,3.0,550,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Kids,Veg,All
+Dal Paratha (2) with Curd,480,16.0,65.0,16.0,3.0,500,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,North
+Egg White Omelette (3 Eggs) with Veggies & Toast,240,24.0,15.0,8.0,2.0,350,30,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Brown Rice Pulao (Large) with Mixed Veggies & Raita,420,12.0,75.0,8.0,3.5,400,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Millet Khichdi with Kadhi & Salad,380,12.0,60.0,10.0,2.5,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,North
+Jowar Roti (3) with Methi Sabzi & Curd,420,14.0,65.0,10.0,2.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Veg,North
+Chicken Stew with Brown Rice (1 Cup),500,32.0,45.0,18.0,2.0,500,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Fish Curry with Quinoa & Salad,450,30.0,40.0,15.0,1.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Palak Paneer with Missi Roti (2) & Salad,480,22.0,45.0,22.0,4.0,550,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Curd Rice (Large) with Beetroot Thoran,350,10.0,50.0,10.0,5.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Chana Masala with 2 Bhatura (Low Oil),650,20.0,85.0,24.0,4.0,750,60,Safe,Safe,Safe,Safe,Risky,Lunch,Adults,Veg,North
+Mixed Veg Curry with Tandoori Roti (2),420,12.0,55.0,16.0,4.0,550,55,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Dal Makhani (Low Fat) with Jeera Rice,520,16.0,70.0,18.0,3.0,600,55,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Stuffed Capsicum with Paneer & Rotis (2),450,18.0,45.0,20.0,4.0,500,50,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Grilled Salmon with Asparagus & Mashed Potato,550,40.0,25.0,28.0,1.5,400,30,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Chicken Stir Fry with Broccoli & Brown Rice,480,35.0,35.0,18.0,2.5,450,40,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Mushroom Soup with Garlic Toast (2) & Salad,320,8.0,40.0,12.0,4.0,650,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Lentil Soup with Whole Wheat Roll & Salad,350,16.0,50.0,8.0,3.0,500,45,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Pesarattu (Green Moong Dosa) w/ Ginger Chutney,380,18.0,52.0,10.0,2.0,400,35,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Adai Dosa (Mixed Lentil) w/ Avial,420,20.0,55.0,12.0,3.0,450,40,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Thalipeeth (Multigrain Flatbread) w/ White Butter,350,12.0,45.0,14.0,1.0,350,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Daliya (Broken Wheat) Khichdi w/ Veggies,320,10.0,58.0,6.0,1.0,300,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,North
+Rava Idli (3 pcs) w/ Sagu,400,10.0,65.0,10.0,2.0,500,60,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Set Dosa (3 pcs) w/ Veg Curry,550,12.0,85.0,16.0,3.0,600,65,Safe,Safe,Safe,Risky,Risky,Breakfast,All,Veg,South
+Sabudana Khichdi (Bowl) w/ Peanuts,580,6.0,80.0,25.0,4.0,450,75,Risky,Safe,Safe,Risky,Risky,Breakfast,All,Veg,North
+Appam (2) w/ Veg Stew (Coconut Milk),480,8.0,65.0,20.0,5.0,400,60,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,South
+Akki Roti (Rice Flour Bread) w/ Chutney,420,8.0,70.0,12.0,1.0,450,70,Risky,Safe,Safe,Risky,Risky,Breakfast,All,Veg,South
+Avocado Toast (2 Slices) w/ Poached Egg,380,16.0,30.0,22.0,1.0,280,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+"French Toast (Whole Wheat, Low Sugar) w/ Berries",320,12.0,40.0,12.0,8.0,200,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Kids,Non-Veg,All
+Vermicelli Upma (Large Bowl) w/ Veggies,350,8.0,60.0,9.0,1.0,350,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Shakshuka (2 Eggs in Tomato Base) w/ Toast,400,20.0,25.0,22.0,4.0,500,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Misal Pav (Spicy Sprouts) w/ 2 Pav,650,18.0,85.0,28.0,6.0,950,65,Risky,Risky,Risky,Risky,Risky,Lunch,Adults,Veg,North
+Jowar Bhakri (2) w/ Pitla (Besan Curry) & Thecha,450,18.0,65.0,12.0,1.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Black Chana Curry (Kala Chana) w/ Brown Rice,420,18.0,60.0,10.0,2.0,400,35,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Sarson Ka Saag w/ Makki Ki Roti (2) & Ghee,580,14.0,55.0,32.0,3.0,550,55,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,North
+Lobia (Black Eyed Peas) Curry w/ Rice,400,16.0,62.0,8.0,2.0,350,40,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Kadhi Pakora (Baked) w/ Steamed Rice,450,12.0,65.0,14.0,2.0,550,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Baingan Bharta (Roasted Eggplant) w/ 3 Phulka,350,10.0,55.0,10.0,3.0,300,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,North
+Soya Keema Matar w/ 2 Multigrain Paratha,480,28.0,50.0,16.0,3.0,500,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+"Chicken Shawarma Bowl (Salad Base, No Mayo)",450,45.0,15.0,22.0,2.0,650,30,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Thai Green Curry (Chicken) w/ Jasmine Rice,650,25.0,55.0,35.0,4.0,800,60,Safe,Risky,Safe,Safe,Risky,Lunch,Adults,Non-Veg,All
+Lemon Coriander Chicken w/ Quinoa,400,35.0,30.0,12.0,1.0,450,35,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Zucchini Noodles (Zoodles) w/ Pesto & Chicken,320,28.0,10.0,18.0,2.0,350,20,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Hyderabadi Haleem (Oats Version) w/ Fried Onions,550,35.0,45.0,24.0,1.0,600,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Prawn Curry (Coconut Base) w/ Rice,580,30.0,50.0,28.0,1.0,650,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Cauliflower Rice Pulao w/ Grilled Paneer,320,18.0,15.0,20.0,2.0,300,25,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Pumpkin & Coconut Soup w/ Garlic Bread,280,4.0,35.0,12.0,6.0,450,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Chicken Clear Soup w/ Boiled Egg & Veggies,220,20.0,5.0,10.0,0.0,500,15,Safe,Safe,Safe,Safe,Safe,Dinner,All,Non-Veg,All
+"Tom Yum Soup (Clear, Shrimp)",180,15.0,8.0,5.0,1.0,850,20,Safe,Risky,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Veg Manchow Soup (No Fried Noodles),150,4.0,20.0,5.0,2.0,750,45,Safe,Risky,Safe,Safe,Safe,Dinner,All,Veg,All
+Pav Bhaji (Less Butter) w/ 2 Whole Wheat Pav,520,14.0,80.0,14.0,6.0,800,65,Risky,Risky,Safe,Safe,Safe,Dinner,All,Veg,North
+Ragda Pattice (Pan Seared Tikkis) w/ Chutney,450,12.0,65.0,14.0,5.0,600,55,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Chicken Momos (Steamed - 6 pcs) w/ Clear Soup,380,22.0,45.0,10.0,1.0,700,55,Safe,Safe,Safe,Safe,Safe,Dinner,Kids,Non-Veg,North
+Grilled Fish Tacos (2) w/ Cabbage Slaw,420,30.0,35.0,16.0,2.0,500,45,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Tofu Stir Fry w/ Buckwheat Noodles,400,20.0,55.0,12.0,2.0,650,45,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Veg,All
+"Nicoise Salad (Tuna, Beans, Egg, Olives)",380,32.0,15.0,20.0,2.0,550,25,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Dhokla (3 pcs) w/ Green Chutney,220,8.0,35.0,6.0,2.0,450,40,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Khandvi (3 Rolls) w/ Mustard Tempering,180,6.0,22.0,8.0,1.0,250,35,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Muthia (Steamed Bottle Gourd Dumplings),250,8.0,38.0,8.0,2.0,300,45,Safe,Safe,Safe,Safe,Safe,Snack,Seniors,Veg,North
+Patra (Steamed Colocasia Leaves),200,6.0,28.0,8.0,3.0,250,40,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Sattu Drink (Savory) w/ Lime & Cumin,120,8.0,18.0,2.0,0.0,200,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Mango Lassi (No Added Sugar),220,6.0,32.0,6.0,25.0,50,55,Safe,Safe,Safe,Risky,Safe,Snack,All,Veg,North
+"Bhel Puri (Homemade, More Sprouts)",280,8.0,45.0,8.0,4.0,550,60,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,North
+Roasted Chana (Chickpeas) - Handful,150,8.0,22.0,3.0,1.0,10,25,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Corn on the Cob (Bhutta) w/ Lemon,120,4.0,26.0,2.0,5.0,10,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Paneer Kathi Roll (Whole Wheat Wrap),380,18.0,35.0,18.0,2.0,450,50,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,North
+Egg Franky (Whole Wheat Wrap),350,16.0,32.0,16.0,1.0,400,50,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Non-Veg,North
+Dark Chocolate (2 Squares) & Strawberries,140,2.0,14.0,9.0,8.0,0,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+"Carrot Halwa (Low Fat Milk, Less Sugar)",220,5.0,35.0,8.0,18.0,60,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Tender Coconut Water w/ Malai,100,2.0,12.0,5.0,10.0,40,45,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Ragi Malt (Salted) w/ Buttermilk (1 Large Glass),180,6.0,35.0,2.0,0.0,150,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Mung Bean Sprout Salad w/ Pomegranate (1 Medium Bowl),220,12.0,38.0,1.0,8.0,50,30,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,All
+Palak Paratha (2) w/ Curd & Flaxseed Chutney,450,14.0,55.0,18.0,2.0,400,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Egg Bhurji Pav (2 Whole Wheat Pav),480,22.0,45.0,20.0,3.0,550,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,North
+Methi Muthia (5 pcs - Steamed) w/ Green Chutney,280,10.0,40.0,8.0,2.0,350,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,North
+Kancheepuram Idli (2 pcs) w/ Spicy Chutney,320,8.0,55.0,6.0,1.0,450,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Puttu (1 Pc - Ragi Version) w/ Kadala Curry,480,16.0,75.0,10.0,3.0,400,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,South
+Bread Upma (1 Bowl - Whole Wheat) w/ Peanuts,350,10.0,50.0,12.0,4.0,500,60,Safe,Safe,Safe,Safe,Safe,Breakfast,Kids,Veg,South
+Soya Keema Pav (2 Whole Wheat Pav),420,25.0,40.0,14.0,3.0,600,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,North
+Oats & Besan Chilla (2 Medium) w/ Mint Yogurt,340,14.0,42.0,10.0,1.0,300,40,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Paneer Paratha (1 Large) w/ Pickle (Low Oil),550,18.0,55.0,28.0,2.0,850,55,Safe,Risky,Safe,Safe,Risky,Breakfast,Kids,Veg,North
+Vegetable Dalia Pulao (1 Bowl) w/ Raita,320,10.0,55.0,6.0,2.0,300,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,North
+Macher Jhol (Fish Curry - 2 Pcs) w/ Brown Rice,520,35.0,50.0,15.0,1.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,East
+Litti Chokha (2 Littis - Baked) w/ Moderate Ghee,600,16.0,85.0,20.0,4.0,650,55,Safe,Safe,Safe,Safe,Risky,Lunch,Adults,Veg,North
+Chicken Chettinad (Home Style) w/ 2 Chapati,580,35.0,45.0,25.0,1.0,550,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Gatte Ki Sabzi (1 Bowl) w/ 2 Bajra Roti,480,14.0,55.0,20.0,3.0,500,50,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Veg,North
+Spinach Dal (1 Bowl) w/ Jeera Rice (1 Cup),420,16.0,65.0,8.0,1.0,400,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Keema Matar (Chicken - 1 Bowl) w/ 2 Multigrain Roti,500,38.0,35.0,20.0,2.0,550,40,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,North
+Kadhi Chawal (1 Bowl Kadhi + 1.5 Cup Rice),480,12.0,75.0,12.0,2.0,500,60,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Veg Biryani (1.5 Cups - Brown Rice) w/ Burani Raita,450,10.0,70.0,12.0,3.0,550,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Paneer Makhani (Low Fat) w/ 2 Phulka,520,18.0,50.0,26.0,4.0,500,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Egg Roast (2 Eggs - Kerala Style) w/ 2 Appam,550,18.0,60.0,24.0,3.0,550,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Rajma Masala (1 Bowl) w/ Quinoa (1 Cup),420,16.0,60.0,10.0,2.0,400,35,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North
+Bhindi Fry (Air Fried) w/ Dal & Rice (Full Meal),400,12.0,65.0,8.0,1.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Grilled Pomfret Fish (1 Whole - 200g) w/ Salad,350,30.0,5.0,20.0,0.0,300,0,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Moong Dal Khichdi (1 Bowl) w/ Ghee & Curd,380,14.0,55.0,10.0,1.0,400,45,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,North
+Chicken Clear Soup (Large Bowl) w/ Shredded Chicken,220,25.0,8.0,8.0,1.0,600,20,Safe,Safe,Safe,Safe,Safe,Dinner,All,Non-Veg,All
+Pumpkin Soup (1 Bowl) w/ 1 Slice Garlic Toast,250,4.0,35.0,8.0,5.0,450,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Lauki Chana Dal (1 Bowl) w/ 2 Phulka,320,12.0,50.0,6.0,2.0,300,40,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,North
+Soya Chunk Pulao (1.5 Cups) w/ Raita,420,22.0,55.0,10.0,2.0,450,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Tandoori Chicken (2 Drumsticks) w/ Salad,350,40.0,5.0,18.0,0.0,550,0,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,North
+Paneer Tikka Masala (Dry - 150g) w/ 1 Roti,400,22.0,25.0,22.0,3.0,500,35,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,North
+Millet Curd Rice (1 Bowl) w/ Cucumber & Pomegranate,300,8.0,45.0,8.0,4.0,250,40,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Lemon Rice (1.5 Cups - Brown Rice) w/ Peanuts,380,8.0,60.0,12.0,1.0,400,50,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Sweet Corn Soup (1 Bowl - No Cornflour) w/ Egg Drop,180,10.0,22.0,5.0,3.0,500,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Non-Veg,All
+Makhana (1 Cup - Roasted) w/ Black Salt,120,4.0,20.0,3.0,0.0,150,25,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Chana Jor Garam (1 Small Bowl) w/ Lemon,180,8.0,28.0,4.0,1.0,300,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Peanut Chaat (1 Small Bowl - Boiled) w/ Onion,250,12.0,18.0,14.0,2.0,200,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Masala Papad (1 Large - Roasted) w/ Kachumber,100,4.0,12.0,2.0,1.0,450,40,Safe,Risky,Safe,Safe,Safe,Snack,All,Veg,North
+Fruit Chaat (1 Bowl) w/ Chaat Masala,150,2.0,35.0,1.0,25.0,150,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,All
+Dhokla (3 Pcs - Rava) w/ Less Oil Tempering,200,6.0,30.0,6.0,1.0,350,50,Safe,Safe,Safe,Safe,Safe,Snack,Seniors,Veg,North
+Buttermilk (1 Glass - Spiced) w/ Flaxseeds,80,4.0,6.0,4.0,0.0,150,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Coconut Water (1 Glass) w/ Chia Seeds,60,1.0,12.0,1.0,8.0,30,40,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Til Laddu (1 Pc - Sesame & Jaggery),150,4.0,18.0,8.0,12.0,5,45,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Dry Bhel (1 Bowl) w/ Seeds & Nuts,180,5.0,35.0,2.0,1.0,300,60,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,North
+Almond Milk (1 Glass - Unsweetened) w/ Saffron,120,4.0,4.0,10.0,0.0,50,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Cucumber & Carrot Sticks (1 Plate) w/ Hummus,150,6.0,18.0,7.0,2.0,250,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Egg White Bhurji (2 Eggs) w/ 1 Toast,200,18.0,15.0,6.0,1.0,350,20,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Non-Veg,All
+Moong Dal Halwa (1 Small Bowl - Low Sugar),280,6.0,35.0,12.0,18.0,20,55,Safe,Safe,Safe,Risky,Risky,Snack,All,Veg,North
+"Chicken Sandwich (1 Pc - Multigrain, No Mayo)",320,25.0,30.0,10.0,2.0,450,45,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Non-Veg,All
+Sol Kadhi (1 Glass) w/ Kokum & Coconut Milk,120,2.0,10.0,8.0,4.0,100,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Amla Juice (1 Shot - 50ml) w/ Honey,80,0.5,18.0,0.0,12.0,10,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Kerala Matta Rice (1 Cup) w/ Fish Curry (Kudampuli) & Thoran,550,30.0,65.0,12.0,2.0,550,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Ragi Puttu (1 Pc) w/ Kadala Curry (Black Chickpeas),420,16.0,60.0,10.0,2.0,400,50,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,South
+Idiyappam (2 pcs) w/ Vegetable Stew (Light Coconut Milk),380,8.0,65.0,10.0,3.0,350,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Cabbage Thoran (Large Bowl) w/ 2 Chapati,350,10.0,50.0,12.0,3.0,400,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Kanji (Red Rice Gruel) w/ Payar (Green Gram) & Pickle,380,14.0,65.0,5.0,1.0,450,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Appam (2 pcs) w/ Egg Roast (Less Oil),450,18.0,55.0,16.0,2.0,500,60,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,South
+Oats Dosa (3 pcs) w/ Tomato Chutney,320,12.0,45.0,10.0,1.0,400,45,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Wheat Dosa (Godhambu Dosa - 2 pcs) w/ Coconut Chutney,350,10.0,50.0,12.0,2.0,450,50,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Mathi (Sardine) Fry (Air Fried - 3 pcs) w/ Onion Salad,250,22.0,5.0,15.0,0.0,300,0,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Non-Veg,South
+Moru Curry (Buttermilk) w/ Matta Rice (1 Cup) & Mezhukkupuratti,480,12.0,70.0,14.0,2.0,500,55,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Horse Gram (Muthira) Thoran w/ Kanji,320,14.0,55.0,6.0,1.0,350,35,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Steamed Nendran Banana (Half) - No Sugar,140,2.0,35.0,0.5,18.0,5,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,South
+Avial (Mixed Veg w/ Coconut) & 2 Phulka,400,10.0,55.0,16.0,3.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Kozhukatta (Wheat & Coconut Filling - 2 pcs),320,6.0,50.0,10.0,12.0,50,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Pathiri (Rice Roti - 2 pcs) w/ Chicken Curry (Kerala Style),450,25.0,50.0,15.0,2.0,550,60,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,South
+Soya Chunks Roast (Kerala Style) w/ 2 Chapati,420,24.0,45.0,14.0,2.0,500,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Unakkalari (Raw Rice) Porridge w/ Moong Dal,300,8.0,55.0,4.0,1.0,200,60,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Cheera (Spinach) Thoran w/ 1/2 Cup Rice & Curd,300,10.0,45.0,8.0,1.0,300,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Ada (Steamed Rice Parcel) w/ Spiced Lentil Filling (Otada),220,8.0,40.0,4.0,1.0,300,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Chicken Stew (Kerala Style) w/ Whole Wheat Bread (2),450,28.0,35.0,18.0,2.0,600,50,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,South
+Bitter Gourd (Pavakka) Theeyal w/ Matta Rice (Small Bowl),380,8.0,55.0,12.0,3.0,450,45,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Chammanthi (Chutney) & Boiled Tapioca (Kappa - Small Portion),400,4.0,85.0,5.0,2.0,350,70,Risky,Safe,Safe,Risky,Risky,Snack,Adults,Veg,South
+Fish Pollichathu (Karimeen/Pearl Spot in Banana Leaf),380,35.0,12.0,18.0,1.0,450,20,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Wheat Puttu (1 Pc) w/ Steamed Nendran Banana,350,8.0,72.0,4.0,18.0,200,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Veg,South
+Nurukku Gothambu (Broken Wheat) Upma w/ Veggies,320,10.0,55.0,8.0,1.0,350,45,Safe,Safe,Safe,Safe,Safe,Breakfast,Seniors,Veg,South
+Neer Dosa (3 pcs) w/ Onion Tomato Chutney,300,6.0,58.0,6.0,1.0,400,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Meen Peera (Small Fish w/ Coconut & Kudampuli) & Rice,450,30.0,50.0,14.0,0.0,450,45,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Olan (Ash Gourd & Cowpeas in Coconut Milk) w/ Rice,400,12.0,60.0,14.0,2.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Kappa Puzhukku (Mashed Tapioca) w/ Fish Curry,650,25.0,95.0,20.0,4.0,600,85,Risky,Safe,Safe,Risky,Risky,Lunch,Adults,Non-Veg,South
+Green Gram (Cherupayar) Curry w/ 2 Chapati,380,18.0,55.0,10.0,2.0,450,40,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Kumbalanga (Winter Melon) Curd Curry w/ Rice,350,8.0,55.0,10.0,2.0,300,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Prawn Roast (Kerala Style - Less Oil) w/ 2 Chapati,480,28.0,45.0,20.0,1.0,550,55,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,South
+Vellayappam (No Sugar) w/ Veg Kurma,420,8.0,65.0,14.0,3.0,400,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Kadalikka (Chickpea) Sundal w/ Coconut,220,12.0,30.0,6.0,1.0,250,30,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Sambaram (Spiced Buttermilk w/ Ginger & Chili),60,2.0,4.0,2.0,0.0,150,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Rasam Rice (Brown Rice) w/ Roasted Papad,350,6.0,65.0,8.0,1.0,500,55,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Beans Mezhukkupuratti (Stir Fry) w/ 2 Chapati,320,10.0,48.0,12.0,2.0,350,45,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Parippu Vada (Baked/Air Fried - 2 pcs),180,8.0,22.0,6.0,0.0,250,40,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,South
+Egg Roast (Boiled Egg in Onion Masala) w/ 2 Wheat Porotta,550,18.0,60.0,28.0,2.0,600,60,Safe,Safe,Safe,Safe,Risky,Dinner,Adults,Non-Veg,South
+Chiratta Puttu (Wheat) w/ Steamed Banana,300,6.0,60.0,4.0,12.0,100,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Kumbilappam (Jackfruit Dumpling - Steamed),250,4.0,45.0,8.0,15.0,10,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,South
+Chicken Thoran (Minced Chicken w/ Coconut) w/ Rice,480,35.0,45.0,18.0,0.0,500,40,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Vendakka (Okra) Kichadi (Yogurt Dip) w/ Rice,380,10.0,60.0,10.0,2.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Soya Chunk Cutlet (Air Fried - 2 pcs),200,14.0,18.0,8.0,1.0,300,35,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,South
+Unakkalari (Rice) Kanji w/ Vanpayar (Red Cowpeas) Thoran,400,14.0,70.0,6.0,1.0,400,50,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,South
+Semiya (Vermicelli) Upma w/ Lots of Veggies,350,8.0,58.0,10.0,1.0,400,55,Safe,Safe,Safe,Safe,Safe,Breakfast,Kids,Veg,South
+Malabar Spinach (Basella) Curry w/ Rice,320,8.0,55.0,8.0,1.0,300,45,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Chakka Puzhukku (Raw Jackfruit) w/ Fish Curry,400,22.0,45.0,12.0,2.0,500,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Non-Veg,South
+Vazha Pindi (Banana Stem) Thoran w/ Rice,320,6.0,50.0,8.0,1.0,300,40,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Netholi (Anchovy) Peera (Small Fish w/ Coconut),380,32.0,10.0,18.0,0.0,400,20,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Erissery (Pumpkin & Cowpeas) w/ 1/2 Cup Rice,350,12.0,55.0,10.0,3.0,350,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Koottu Curry (Raw Banana & Black Chickpea) w/ Rice,420,16.0,65.0,12.0,2.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Vattayappam (Steamed Rice Cake - 1 Slice),220,4.0,45.0,2.0,8.0,100,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,South
+Muringayila (Drumstick Leaves) Curry w/ Rice,300,10.0,50.0,6.0,1.0,350,40,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Beetroot Pachadi (Yogurt Dip) w/ Rice,320,8.0,55.0,6.0,6.0,300,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,South
+Kappa Biryani (Tapioca Mix w/ Meat - Small Bowl),650,25.0,80.0,25.0,2.0,700,75,Risky,Risky,Risky,Risky,Risky,Dinner,Adults,Non-Veg,South
+Thalassery Chicken Biryani (Small Portion) w/ Salad,600,28.0,65.0,22.0,2.0,650,60,Safe,Safe,Safe,Risky,Risky,Lunch,Adults,Non-Veg,South
+Inji Curry (Ginger Curry) & Curd Rice,380,8.0,60.0,10.0,5.0,450,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Avil (Beaten Rice) Milkshake w/ Banana (No Sugar),350,8.0,60.0,8.0,15.0,100,60,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,South
+Kallappam (Toddy/Yeast Pancake - 2 pcs) w/ Stew,400,6.0,65.0,8.0,3.0,300,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Ulli Theeyal (Shallot Curry) w/ 2 Chapati,420,8.0,55.0,18.0,4.0,500,50,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,South
+Chemmeen (Prawn) Roast (Less Oil) w/ Rice,520,30.0,45.0,22.0,1.0,600,55,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,South
+Chena (Elephant Yam) Mezhukkupuratti w/ Rice,450,8.0,70.0,14.0,2.0,400,65,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Veg,South
+Pazham Pori (Banana Fritter - Air Fried/Baked),220,2.0,40.0,6.0,15.0,100,60,Safe,Safe,Safe,Risky,Risky,Snack,Kids,Veg,South
+Ada Pradhaman (Dessert - Small Cup),350,4.0,65.0,10.0,35.0,50,80,Risky,Safe,Safe,Risky,Risky,Snack,All,Veg,South
+Pineapple Pulissery (Yogurt Curry) w/ Rice,380,6.0,65.0,8.0,12.0,350,55,Safe,Safe,Safe,Safe,Safe,Lunch,Kids,Veg,South
+Cheese Burst Pizza (Large Slice),420,12.0,45.0,22.0,6.0,900,75,Risky,Risky,Risky,Risky,Risky,Dinner,All,Veg,All
+Fried Chicken (4 pcs),520,35.0,20.0,35.0,0.0,1100,65,Risky,Risky,Risky,Risky,Risky,Dinner,Adults,Non-Veg,All
+French Fries (Large Pack),480,6.0,65.0,22.0,1.0,850,70,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Chocolate Milkshake (Large),550,10.0,85.0,18.0,65.0,300,75,Risky,Safe,Risky,Risky,Risky,Snack,Kids,Veg,All
+White Bread Jam Sandwich (3 slices),400,8.0,75.0,6.0,35.0,450,80,Risky,Safe,Safe,Risky,Risky,Breakfast,Kids,Veg,All
+Bakery Puff (Veg),320,5.0,30.0,20.0,2.0,500,70,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Instant Noodles (Full Bowl),450,10.0,65.0,18.0,5.0,1200,75,Risky,Risky,Risky,Risky,Risky,Dinner,Students,Veg,All
+Sugary Soft Drink (500ml),210,0.0,55.0,0.0,55.0,40,90,Risky,Safe,Risky,Risky,Risky,Snack,All,Veg,All
+Deep Fried Poori (4) w/ Potato Masala,600,10.0,85.0,28.0,4.0,650,75,Risky,Risky,Risky,Risky,Risky,Breakfast,All,Veg,North
+Butter Loaded Paratha (2),720,14.0,90.0,35.0,6.0,700,70,Risky,Risky,Risky,Safe,Risky,Breakfast,All,Veg,North
+"Paneer Paratha (Medium, Low Butter)",480,18.0,55.0,20.0,3.0,550,60,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Veg Fried Rice (Low Oil),420,9.0,70.0,12.0,4.0,500,65,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Chicken Roll (Whole Wheat),380,22.0,35.0,14.0,3.0,600,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Non-Veg,All
+Sweetened Flavoured Yogurt,240,6.0,35.0,4.0,28.0,90,60,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Granola Bar (Commercial),210,5.0,28.0,7.0,18.0,120,65,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Double Cheese Burger,520,25.0,40.0,32.0,8.0,980,68,Risky,Risky,Risky,Risky,Risky,Lunch,All,Non-Veg,All
+Loaded Nachos with Cheese,610,14.0,70.0,36.0,6.0,920,72,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Chocolate Donut (Large),330,4.0,42.0,18.0,22.0,320,76,Risky,Safe,Safe,Risky,Risky,Snack,All,Veg,All
+Ice Cream Sundae,480,6.0,65.0,22.0,48.0,210,70,Risky,Safe,Safe,Risky,Risky,Dessert,All,Veg,All
+White Sauce Pasta (Creamy),620,18.0,82.0,28.0,6.0,760,72,Risky,Risky,Risky,Safe,Risky,Dinner,All,Veg,All
+Fried Chicken Burger,540,28.0,45.0,30.0,5.0,1020,70,Risky,Risky,Risky,Risky,Risky,Lunch,Adults,Non-Veg,All
+Sweet Bakery Cake Slice,410,5.0,55.0,18.0,38.0,280,75,Risky,Safe,Safe,Risky,Risky,Dessert,All,Veg,All
+Deep Fried Samosa (3 pcs),480,9.0,60.0,24.0,6.0,650,72,Risky,Risky,Safe,Risky,Risky,Snack,All,Veg,All
+Butter Chicken with Naan,780,32.0,65.0,42.0,8.0,880,65,Risky,Risky,Risky,Safe,Risky,Dinner,Adults,Non-Veg,North
+Paneer Butter Masala (Restaurant Style),720,22.0,55.0,46.0,8.0,920,60,Risky,Risky,Risky,Safe,Risky,Dinner,All,Veg,North
+Vegetable Pulao (Moderate Oil),420,8.0,68.0,14.0,4.0,480,60,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Chicken Curry (Home Style),380,28.0,18.0,16.0,2.0,420,45,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Whole Wheat Veg Sandwich,310,10.0,42.0,8.0,5.0,350,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Sweet Corn Soup,190,6.0,28.0,4.0,6.0,420,58,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Peanut Chikki (2 pcs),260,7.0,32.0,12.0,18.0,40,55,Safe,Safe,Safe,Safe,Safe,Snack,Kids,Veg,All
+Curd with Honey,180,5.0,26.0,3.0,18.0,90,45,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Low Oil Egg Omelette,220,18.0,4.0,14.0,1.0,240,20,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Steamed Vegetable Salad with Paneer,260,18.0,20.0,12.0,4.0,180,25,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Grilled Tofu with Stir Fry Veggies,280,20.0,18.0,14.0,3.0,200,20,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Boiled Sweet Potato with Chaat Masala,190,3.0,44.0,1.0,6.0,150,50,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Air Fried Chicken Breast,310,38.0,4.0,12.0,0.0,240,10,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Vegetable Clear Soup,90,3.0,12.0,2.0,3.0,280,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Low Oil Vegetable Khichdi,340,10.0,52.0,8.0,3.0,260,45,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,All
+Multigrain Roti with Dal,420,16.0,65.0,10.0,4.0,380,50,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Brown Rice with Grilled Fish,460,32.0,48.0,12.0,2.0,420,40,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Paneer Bhurji (Low Fat),350,24.0,18.0,16.0,3.0,320,30,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Greek Yogurt (Plain),120,10.0,8.0,4.0,6.0,60,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Whole Wheat Pasta (Light Sauce),410,14.0,62.0,9.0,5.0,420,55,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Low Sugar Fruit Bowl,140,2.0,32.0,1.0,18.0,20,35,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Roasted Chickpeas Snack,210,10.0,32.0,4.0,3.0,160,28,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Vegetable Omelette (Low Oil),240,18.0,10.0,12.0,2.0,280,25,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Quinoa & Veg Bowl,330,12.0,52.0,6.0,4.0,190,35,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Low Oil Chicken Curry,320,30.0,8.0,14.0,2.0,340,30,Safe,Safe,Safe,Safe,Safe,Lunch,Adults,Non-Veg,All
+Vegetable Upma (Low Sodium),290,6.0,48.0,6.0,2.0,120,52,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Millet Pongal,360,10.0,55.0,10.0,2.0,240,50,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Low Fat Paneer Tikka,280,26.0,8.0,10.0,2.0,260,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,North
+Grilled Mushroom Bowl,220,8.0,18.0,10.0,3.0,180,20,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Butter Loaded Paratha,520,10.0,62.0,26.0,4.0,680,68,Risky,Risky,Risky,Risky,Risky,Breakfast,All,Veg,North
+Deep Fried Pakora Plate,480,8.0,55.0,24.0,6.0,720,70,Risky,Risky,Safe,Risky,Risky,Snack,All,Veg,All
+Sweet Milkshake,420,10.0,58.0,12.0,44.0,260,72,Risky,Safe,Safe,Risky,Risky,Snack,Kids,Veg,All
+Chocolate Muffin,390,5.0,50.0,18.0,32.0,310,75,Risky,Safe,Safe,Risky,Risky,Snack,All,Veg,All
+Cream Biscuits (4 pcs),260,3.0,38.0,10.0,24.0,190,78,Risky,Safe,Safe,Risky,Risky,Snack,Kids,Veg,All
+Cheese Burst Pizza Slice,620,22.0,68.0,32.0,6.0,980,74,Risky,Risky,Risky,Risky,Risky,Dinner,All,Veg,All
+Loaded Fries,510,6.0,62.0,28.0,1.0,1020,76,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Butter Naan with Cream Curry,740,18.0,82.0,36.0,6.0,880,72,Risky,Risky,Risky,Safe,Risky,Dinner,All,Veg,North
+Deep Fried Chicken Wings,580,34.0,18.0,36.0,0.0,1120,65,Risky,Risky,Risky,Risky,Risky,Snack,Adults,Non-Veg,All
+Chocolate Brownie,430,6.0,55.0,22.0,38.0,240,73,Risky,Safe,Safe,Risky,Risky,Dessert,All,Veg,All
+Low Oil Vegetable Curry,240,5.0,20.0,10.0,3.0,180,35,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Steamed Corn Bowl,180,6.0,32.0,2.0,6.0,90,52,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Egg Whites & Spinach,150,20.0,4.0,2.0,1.0,160,10,Safe,Safe,Safe,Safe,Safe,Breakfast,Adults,Non-Veg,All
+Grilled Fish Fillet,260,34.0,0.0,10.0,0.0,220,0,Safe,Safe,Safe,Safe,Safe,Dinner,Adults,Non-Veg,All
+Low Fat Dal Soup,170,9.0,22.0,3.0,2.0,190,30,Safe,Safe,Safe,Safe,Safe,Dinner,Seniors,Veg,All
+Vegetable Stir Fry,210,4.0,18.0,10.0,3.0,240,25,Safe,Safe,Safe,Safe,Safe,Dinner,All,Veg,All
+Low Sugar Protein Shake,240,28.0,12.0,6.0,4.0,120,25,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Plain Roti & Vegetable Sabzi,320,8.0,48.0,6.0,3.0,260,45,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Mixed Fruit Juice (No Sugar Added),180,2.0,42.0,1.0,34.0,15,65,Safe,Safe,Safe,Safe,Safe,Drink,All,Veg,All
+Banana Milkshake (Sweetened),420,9.0,58.0,12.0,46.0,120,72,Risky,Safe,Safe,Risky,Risky,Drink,Kids,Veg,All
+Fried Banana Chips,520,4.0,48.0,34.0,12.0,380,75,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,South
+Roasted Almonds (Small Bowl),310,11.0,12.0,26.0,3.0,5,15,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Peanut Chikki (Jaggery),280,8.0,34.0,14.0,26.0,20,45,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Vegetable Sandwich (Mayonnaise),390,9.0,42.0,18.0,6.0,520,60,Safe,Safe,Safe,Safe,Risky,Snack,All,Veg,All
+Cheese Garlic Bread (2 pcs),460,12.0,48.0,24.0,5.0,640,70,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Low Fat Yogurt with Seeds,190,14.0,18.0,6.0,10.0,60,25,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Sweet Corn (Butter Loaded),320,6.0,38.0,16.0,8.0,380,68,Safe,Safe,Safe,Safe,Risky,Snack,All,Veg,All
+White Bread Jam Toast,340,6.0,62.0,4.0,28.0,220,78,Risky,Safe,Safe,Risky,Risky,Breakfast,Kids,Veg,All
+Protein Bar (Commercial),280,18.0,26.0,10.0,14.0,180,55,Safe,Safe,Safe,Safe,Safe,Snack,Adults,Veg,All
+Paneer Butter Toast,420,14.0,30.0,26.0,4.0,480,65,Safe,Safe,Safe,Safe,Risky,Breakfast,All,Veg,All
+Masala Peanuts (Fried),450,14.0,22.0,34.0,6.0,420,40,Risky,Risky,Risky,Risky,Risky,Snack,All,Veg,All
+Vegetable Poha (Low Oil),280,6.0,46.0,6.0,3.0,180,58,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Brown Rice & Grilled Paneer,480,22.0,52.0,14.0,4.0,320,45,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Stuffed Cheese Paratha,620,16.0,68.0,30.0,5.0,680,72,Risky,Risky,Risky,Safe,Risky,Breakfast,All,Veg,North
+Sweet Lassi (Large Glass),390,12.0,48.0,12.0,38.0,160,70,Risky,Safe,Safe,Risky,Risky,Drink,All,Veg,North
+Vegetable Cutlet (Shallow Fried),360,8.0,42.0,18.0,5.0,420,65,Safe,Safe,Safe,Safe,Risky,Snack,All,Veg,All
+Air Fried Sweet Potato Fries,260,4.0,44.0,8.0,6.0,180,60,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Black Coffee (Plain),10,0.0,2.0,0.0,0.0,5,0,Safe,Safe,Safe,Safe,Safe,Drink,All,Veg,All
+Chapati (2) with Dal (Medium Portion),380,14.0,55.0,8.0,4.0,320,52,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+Vegetable Fried Rice (Low Oil),420,9.0,62.0,12.0,5.0,380,60,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,All
+"Paneer Sandwich (Grilled, Light Butter)",440,18.0,46.0,18.0,6.0,420,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Sweetened Oats Porridge,390,11.0,58.0,9.0,24.0,140,62,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,All
+Banana & Peanut Smoothie,410,16.0,52.0,14.0,28.0,110,58,Safe,Safe,Safe,Safe,Safe,Drink,Adults,Veg,All
+Brown Bread Peanut Butter Toast,430,14.0,48.0,20.0,10.0,260,65,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,All
+Boiled Corn & Butter (Moderate),260,6.0,34.0,10.0,6.0,240,55,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Vegetable Upma (Standard),340,7.0,52.0,10.0,4.0,360,58,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Masala Dosa (Medium Size),480,11.0,60.0,20.0,5.0,520,65,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Curd Rice (Standard Portion),320,8.0,48.0,8.0,5.0,300,50,Safe,Safe,Safe,Safe,Safe,Lunch,Seniors,Veg,South
+Mixed Nuts (Small Portion),280,9.0,16.0,22.0,4.0,5,20,Safe,Safe,Safe,Safe,Safe,Snack,All,Veg,All
+Protein Shake (Sweetened),360,26.0,34.0,6.0,22.0,160,52,Safe,Safe,Safe,Safe,Safe,Drink,Adults,Veg,All
+Idli (2 pcs) with Chutney,260,8.0,42.0,6.0,3.0,220,55,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,South
+Vegetable Poha (Standard),330,7.0,54.0,8.0,5.0,300,62,Safe,Safe,Safe,Safe,Safe,Breakfast,All,Veg,North
+Paneer Butter Masala (Small Portion),520,18.0,28.0,32.0,6.0,580,45,Safe,Safe,Safe,Safe,Safe,Lunch,All,Veg,North

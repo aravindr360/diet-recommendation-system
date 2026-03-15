@@ -268,3 +268,109 @@ food,calories,protein,carbs,fat,sugar,sodium,gi,diabetes_label,hypertension_labe
 "Pazham Pori (Banana Fritter - Air Fried/Baked)",220,2.0,40.0,6.0,15.0,100,60,Moderate,Recommended,Recommended,Avoid,Avoid,Snack,Kids,Veg,South
 "Ada Pradhaman (Dessert - Small Cup)",350,4.0,65.0,10.0,35.0,50,80,Avoid,Recommended,Moderate,Avoid,Avoid,Snack,All,Veg,South
 "Pineapple Pulissery (Yogurt Curry) w/ Rice",380,6.0,65.0,8.0,12.0,350,55,Moderate,Recommended,Recommended,Moderate,Recommended,Lunch,Kids,Veg,South
+"Cheese Burst Pizza (Large Slice)",420,12,45,22,6,900,75,Avoid,Avoid,Avoid,Avoid,Avoid,Dinner,All,Veg,All
+"Fried Chicken (4 pcs)",520,35,20,35,0,1100,65,Avoid,Avoid,Avoid,Avoid,Avoid,Dinner,Adults,Non-Veg,All
+"French Fries (Large Pack)",480,6,65,22,1,850,70,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Chocolate Milkshake (Large)",550,10,85,18,65,300,75,Avoid,Moderate,Avoid,Avoid,Avoid,Snack,Kids,Veg,All
+"White Bread Jam Sandwich (3 slices)",400,8,75,6,35,450,80,Avoid,Moderate,Moderate,Avoid,Avoid,Breakfast,Kids,Veg,All
+"Bakery Puff (Veg)",320,5,30,20,2,500,70,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Instant Noodles (Full Bowl)",450,10,65,18,5,1200,75,Avoid,Avoid,Avoid,Avoid,Avoid,Dinner,Students,Veg,All
+"Sugary Soft Drink (500ml)",210,0,55,0,55,40,90,Avoid,Recommended,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Deep Fried Poori (4) w/ Potato Masala",600,10,85,28,4,650,75,Avoid,Avoid,Avoid,Avoid,Avoid,Breakfast,All,Veg,North
+"Butter Loaded Paratha (2)",720,14,90,35,6,700,70,Avoid,Avoid,Avoid,Moderate,Avoid,Breakfast,All,Veg,North
+"Paneer Paratha (Medium, Low Butter)",480,18,55,20,3,550,60,Moderate,Moderate,Moderate,Recommended,Moderate,Breakfast,All,Veg,North
+"Veg Fried Rice (Low Oil)",420,9,70,12,4,500,65,Moderate,Moderate,Moderate,Moderate,Moderate,Lunch,All,Veg,All
+"Chicken Roll (Whole Wheat)",380,22,35,14,3,600,55,Moderate,Moderate,Recommended,Moderate,Moderate,Snack,All,Non-Veg,All
+"Sweetened Flavoured Yogurt",240,6,35,4,28,90,60,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Granola Bar (Commercial)",210,5,28,7,18,120,65,Moderate,Recommended,Moderate,Moderate,Moderate,Snack,All,Veg,All
+"Double Cheese Burger",520,25,40,32,8,980,68,Avoid,Avoid,Avoid,Avoid,Avoid,Lunch,All,Non-Veg,All
+"Loaded Nachos with Cheese",610,14,70,36,6,920,72,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Chocolate Donut (Large)",330,4,42,18,22,320,76,Avoid,Recommended,Moderate,Avoid,Avoid,Snack,All,Veg,All
+"Ice Cream Sundae",480,6,65,22,48,210,70,Avoid,Recommended,Moderate,Avoid,Avoid,Dessert,All,Veg,All
+"White Sauce Pasta (Creamy)",620,18,82,28,6,760,72,Avoid,Avoid,Avoid,Moderate,Avoid,Dinner,All,Veg,All
+"Fried Chicken Burger",540,28,45,30,5,1020,70,Avoid,Avoid,Avoid,Avoid,Avoid,Lunch,Adults,Non-Veg,All
+"Sweet Bakery Cake Slice",410,5,55,18,38,280,75,Avoid,Recommended,Moderate,Avoid,Avoid,Dessert,All,Veg,All
+"Deep Fried Samosa (3 pcs)",480,9,60,24,6,650,72,Avoid,Avoid,Moderate,Avoid,Avoid,Snack,All,Veg,All
+"Butter Chicken with Naan",780,32,65,42,8,880,65,Avoid,Avoid,Avoid,Moderate,Avoid,Dinner,Adults,Non-Veg,North
+"Paneer Butter Masala (Restaurant Style)",720,22,55,46,8,920,60,Avoid,Avoid,Avoid,Moderate,Avoid,Dinner,All,Veg,North
+"Vegetable Pulao (Moderate Oil)",420,8,68,14,4,480,60,Moderate,Moderate,Recommended,Moderate,Moderate,Lunch,All,Veg,All
+"Chicken Curry (Home Style)",380,28,18,16,2,420,45,Recommended,Moderate,Recommended,Recommended,Moderate,Lunch,Adults,Non-Veg,All
+"Whole Wheat Veg Sandwich",310,10,42,8,5,350,50,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,All
+"Sweet Corn Soup",190,6,28,4,6,420,58,Moderate,Moderate,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Peanut Chikki (2 pcs)",260,7,32,12,18,40,55,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,Kids,Veg,All
+"Curd with Honey",180,5,26,3,18,90,45,Moderate,Recommended,Recommended,Moderate,Recommended,Snack,All,Veg,All
+"Low Oil Egg Omelette",220,18,4,14,1,240,20,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Adults,Non-Veg,All
+"Steamed Vegetable Salad with Paneer",260,18,20,12,4,180,25,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Grilled Tofu with Stir Fry Veggies",280,20,18,14,3,200,20,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg,All
+"Boiled Sweet Potato with Chaat Masala",190,3,44,1,6,150,50,Moderate,Recommended,Recommended,Moderate,Recommended,Snack,All,Veg,All
+"Air Fried Chicken Breast",310,38,4,12,0,240,10,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Adults,Non-Veg,All
+"Vegetable Clear Soup",90,3,12,2,3,280,20,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,All
+"Low Oil Vegetable Khichdi",340,10,52,8,3,260,45,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Seniors,Veg,All
+"Multigrain Roti with Dal",420,16,65,10,4,380,50,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Brown Rice with Grilled Fish",460,32,48,12,2,420,40,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,Adults,Non-Veg,All
+"Paneer Bhurji (Low Fat)",350,24,18,16,3,320,30,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg,All
+"Greek Yogurt (Plain)",120,10,8,4,6,60,15,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,All
+"Whole Wheat Pasta (Light Sauce)",410,14,62,9,5,420,55,Moderate,Moderate,Recommended,Moderate,Moderate,Dinner,All,Veg,All
+"Low Sugar Fruit Bowl",140,2,32,1,18,20,35,Moderate,Recommended,Recommended,Moderate,Recommended,Snack,All,Veg,All
+"Roasted Chickpeas Snack",210,10,32,4,3,160,28,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,All
+"Vegetable Omelette (Low Oil)",240,18,10,12,2,280,25,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Adults,Non-Veg,All
+"Quinoa & Veg Bowl",330,12,52,6,4,190,35,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Low Oil Chicken Curry",320,30,8,14,2,340,30,Recommended,Moderate,Recommended,Recommended,Moderate,Lunch,Adults,Non-Veg,All
+"Vegetable Upma (Low Sodium)",290,6,48,6,2,120,52,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg,South
+"Millet Pongal",360,10,55,10,2,240,50,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg,South
+"Low Fat Paneer Tikka",280,26,8,10,2,260,15,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,North
+"Grilled Mushroom Bowl",220,8,18,10,3,180,20,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg,All
+"Butter Loaded Paratha",520,10,62,26,4,680,68,Avoid,Avoid,Avoid,Avoid,Avoid,Breakfast,All,Veg,North
+"Deep Fried Pakora Plate",480,8,55,24,6,720,70,Avoid,Avoid,Moderate,Avoid,Avoid,Snack,All,Veg,All
+"Sweet Milkshake",420,10,58,12,44,260,72,Avoid,Recommended,Moderate,Avoid,Avoid,Snack,Kids,Veg,All
+"Chocolate Muffin",390,5,50,18,32,310,75,Avoid,Recommended,Moderate,Avoid,Avoid,Snack,All,Veg,All
+"Cream Biscuits (4 pcs)",260,3,38,10,24,190,78,Avoid,Recommended,Moderate,Avoid,Avoid,Snack,Kids,Veg,All
+"Cheese Burst Pizza Slice",620,22,68,32,6,980,74,Avoid,Avoid,Avoid,Avoid,Avoid,Dinner,All,Veg,All
+"Loaded Fries",510,6,62,28,1,1020,76,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Butter Naan with Cream Curry",740,18,82,36,6,880,72,Avoid,Avoid,Avoid,Moderate,Avoid,Dinner,All,Veg,North
+"Deep Fried Chicken Wings",580,34,18,36,0,1120,65,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,Adults,Non-Veg,All
+"Chocolate Brownie",430,6,55,22,38,240,73,Avoid,Recommended,Moderate,Avoid,Avoid,Dessert,All,Veg,All
+"Low Oil Vegetable Curry",240,5,20,10,3,180,35,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Steamed Corn Bowl",180,6,32,2,6,90,52,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Egg Whites & Spinach",150,20,4,2,1,160,10,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,Adults,Non-Veg,All
+"Grilled Fish Fillet",260,34,0,10,0,220,0,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Adults,Non-Veg,All
+"Low Fat Dal Soup",170,9,22,3,2,190,30,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,Seniors,Veg,All
+"Vegetable Stir Fry",210,4,18,10,3,240,25,Recommended,Recommended,Recommended,Recommended,Recommended,Dinner,All,Veg,All
+"Low Sugar Protein Shake",240,28,12,6,4,120,25,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,Adults,Veg,All
+"Plain Roti & Vegetable Sabzi",320,8,48,6,3,260,45,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Mixed Fruit Juice (No Sugar Added)",180,2,42,1,34,15,65,Moderate,Recommended,Recommended,Moderate,Moderate,Drink,All,Veg,All
+"Banana Milkshake (Sweetened)",420,9,58,12,46,120,72,Avoid,Recommended,Moderate,Avoid,Avoid,Drink,Kids,Veg,All
+"Fried Banana Chips",520,4,48,34,12,380,75,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,South
+"Roasted Almonds (Small Bowl)",310,11,12,26,3,5,15,Recommended,Recommended,Recommended,Recommended,Moderate,Snack,All,Veg,All
+"Peanut Chikki (Jaggery)",280,8,34,14,26,20,45,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Vegetable Sandwich (Mayonnaise)",390,9,42,18,6,520,60,Moderate,Moderate,Moderate,Moderate,Avoid,Snack,All,Veg,All
+"Cheese Garlic Bread (2 pcs)",460,12,48,24,5,640,70,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Low Fat Yogurt with Seeds",190,14,18,6,10,60,25,Recommended,Recommended,Recommended,Recommended,Recommended,Snack,All,Veg,All
+"Sweet Corn (Butter Loaded)",320,6,38,16,8,380,68,Moderate,Moderate,Recommended,Moderate,Avoid,Snack,All,Veg,All
+"White Bread Jam Toast",340,6,62,4,28,220,78,Avoid,Recommended,Moderate,Avoid,Avoid,Breakfast,Kids,Veg,All
+"Protein Bar (Commercial)",280,18,26,10,14,180,55,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,Adults,Veg,All
+"Paneer Butter Toast",420,14,30,26,4,480,65,Moderate,Moderate,Moderate,Moderate,Avoid,Breakfast,All,Veg,All
+"Masala Peanuts (Fried)",450,14,22,34,6,420,40,Avoid,Avoid,Avoid,Avoid,Avoid,Snack,All,Veg,All
+"Vegetable Poha (Low Oil)",280,6,46,6,3,180,58,Recommended,Recommended,Recommended,Recommended,Recommended,Breakfast,All,Veg,North
+"Brown Rice & Grilled Paneer",480,22,52,14,4,320,45,Recommended,Recommended,Recommended,Recommended,Recommended,Lunch,All,Veg,All
+"Stuffed Cheese Paratha",620,16,68,30,5,680,72,Avoid,Avoid,Avoid,Moderate,Avoid,Breakfast,All,Veg,North
+"Sweet Lassi (Large Glass)",390,12,48,12,38,160,70,Avoid,Recommended,Moderate,Avoid,Avoid,Drink,All,Veg,North
+"Vegetable Cutlet (Shallow Fried)",360,8,42,18,5,420,65,Moderate,Moderate,Recommended,Moderate,Avoid,Snack,All,Veg,All
+"Air Fried Sweet Potato Fries",260,4,44,8,6,180,60,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Black Coffee (Plain)",10,0,2,0,0,5,0,Recommended,Recommended,Recommended,Recommended,Recommended,Drink,All,Veg,All
+"Chapati (2) with Dal (Medium Portion)",380,14,55,8,4,320,52,Recommended,Recommended,Recommended,Recommended,Moderate,Lunch,All,Veg,All
+"Vegetable Fried Rice (Low Oil)",420,9,62,12,5,380,60,Moderate,Moderate,Recommended,Moderate,Moderate,Lunch,All,Veg,All
+"Paneer Sandwich (Grilled, Light Butter)",440,18,46,18,6,420,55,Moderate,Moderate,Moderate,Recommended,Moderate,Snack,All,Veg,All
+"Sweetened Oats Porridge",390,11,58,9,24,140,62,Moderate,Recommended,Recommended,Moderate,Moderate,Breakfast,All,Veg,All
+"Banana & Peanut Smoothie",410,16,52,14,28,110,58,Moderate,Recommended,Recommended,Moderate,Moderate,Drink,Adults,Veg,All
+"Brown Bread Peanut Butter Toast",430,14,48,20,10,260,65,Moderate,Recommended,Recommended,Recommended,Moderate,Breakfast,All,Veg,All
+"Boiled Corn & Butter (Moderate)",260,6,34,10,6,240,55,Moderate,Recommended,Recommended,Moderate,Moderate,Snack,All,Veg,All
+"Vegetable Upma (Standard)",340,7,52,10,4,360,58,Recommended,Moderate,Recommended,Recommended,Moderate,Breakfast,All,Veg,South
+"Masala Dosa (Medium Size)",480,11,60,20,5,520,65,Moderate,Moderate,Moderate,Moderate,Moderate,Breakfast,All,Veg,South
+"Curd Rice (Standard Portion)",320,8,48,8,5,300,50,Recommended,Recommended,Recommended,Recommended,Moderate,Lunch,Seniors,Veg,South
+"Mixed Nuts (Small Portion)",280,9,16,22,4,5,20,Recommended,Recommended,Recommended,Recommended,Moderate,Snack,All,Veg,All
+"Protein Shake (Sweetened)",360,26,34,6,22,160,52,Moderate,Recommended,Recommended,Recommended,Moderate,Drink,Adults,Veg,All
+"Idli (2 pcs) with Chutney",260,8,42,6,3,220,55,Recommended,Recommended,Recommended,Recommended,Moderate,Breakfast,All,Veg,South
+"Vegetable Poha (Standard)",330,7,54,8,5,300,62,Recommended,Recommended,Recommended,Recommended,Moderate,Breakfast,All,Veg,North
+"Paneer Butter Masala (Small Portion)",520,18,28,32,6,580,45,Moderate,Moderate,Moderate,Moderate,Moderate,Lunch,All,Veg,North
+
