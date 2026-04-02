@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live ML Food Scanner</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #34495e; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #2980b9; }
+        #results { margin-top: 20px; padding: 15px; border-radius: 5px; display: none; background-color: #ecf0f1; }
+        .safe { color: #27ae60; font-weight: bold; }
+        .risky { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🔬 Live ML Food Scanner</h2>
+    <p style="text-align: center; color: #7f8c8d;">Enter raw nutritional data to test the active .joblib models.</p>
+
+    <div class="form-group"><label>Calories (kcal)</label><input type="number" id="cal" value="450"></div>
+    <div class="form-group"><label>Protein (g)</label><input type="number" id="prot" value="10"></div>
+    <div class="form-group"><label>Carbs (g)</label><input type="number" id="carbs" value="65"></div>
+    <div class="form-group"><label>Fat (g)</label><input type="number" id="fat" value="18"></div>
+    <div class="form-group"><label>Sugar (g)</label><input type="number" id="sugar" value="45"></div>
+    <div class="form-group"><label>Sodium (mg)</label><input type="number" id="sodium" value="800"></div>
+    <div class="form-group"><label>Glycemic Index (GI)</label><input type="number" id="gi" value="85"></div>
+
+    <button onclick="scanFood()">Run ML Prediction</button>
+
+    <div id="results"></div>
+</div>
+
+<script>
+    async function scanFood() {
+        const btn = document.querySelector('button');
+        btn.innerText = "Analyzing math...";
+        
+        const data = {
+            calories: document.getElementById('cal').value,
+            protein: document.getElementById('prot').value,
+            carbs: document.getElementById('carbs').value,
+            fat: document.getElementById('fat').value,
+            sugar: document.getElementById('sugar').value,
+            sodium: document.getElementById('sodium').value,
+            gi: document.getElementById('gi').value
+        };
+
+        try {
+            const response = await fetch('/api/predict_food', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            if(result.status === "success") {
+                let html = "<h3>Prediction Results:</h3><ul>";
+                for (const [disease, prediction] of Object.entries(result.predictions)) {
+                    let colorClass = prediction === "Safe" ? "safe" : "risky";
+                    html += `<li style="margin-bottom: 8px;"><b>${disease}:</b> <span class="${colorClass}">${prediction}</span></li>`;
+                }
+                html += "</ul>";
+                document.getElementById('results').innerHTML = html;
+                document.getElementById('results').style.display = "block";
+            }
+        } catch (e) {
+            alert("Error connecting to the ML model.");
+        }
+        
+        btn.innerText = "Run ML Prediction";
+    }
+</script>
+
+</body>
+</html>

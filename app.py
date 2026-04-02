@@ -15,7 +15,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # --- 🟢 CONFIGURATION ---
-genai.configure(api_key="AIzaSyBvblC5SRlzLvQhlABfyYJVZtI6gyhap-o")
+genai.configure(api_key="AIzaSyAWEBsJ7sxKcpw9TSr7nAgWdxQQrz0jKjc")
 
 # --- LOAD MODELS & DATA ---
 models = {
@@ -25,7 +25,7 @@ models = {
     "pcos": joblib.load("model_pcos.joblib"),
     "obesity": joblib.load("model_obesity.joblib")
 }
-foods = pd.read_csv("real_foods_labeled.csv")
+foods = pd.read_csv("real_foods_binary.csv")
 
 # --- 🗄️ DATABASE SETUP (PERSISTENT DATA) ---
 DB_NAME = "diet_system.db"
@@ -69,6 +69,45 @@ def init_db():
 # Run DB setup on start
 init_db()
 
+# --- 🔬 LIVE ML FOOD SCANNER (Real-Time Prediction) ---
+@app.route("/api/predict_food", methods=["POST"])
+def predict_food():
+    data = request.json
+    
+    try:
+        # 1. Get the 7 raw nutrients from the user
+        cal = float(data.get("calories", 0))
+        prot = float(data.get("protein", 0))
+        carbs = float(data.get("carbs", 0))
+        fat = float(data.get("fat", 0))
+        sugar = float(data.get("sugar", 0))
+        sodium = float(data.get("sodium", 0))
+        gi = float(data.get("gi", 0))
+
+        # 2. FEATURE ENGINEERING (This matches your train.py math!)
+        carb_ratio = carbs / cal if cal > 0 else 0
+        fat_ratio = fat / cal if cal > 0 else 0
+        sugar_load = sugar * gi
+
+        # 3. Create the exact array the AI expects
+        features = [[cal, prot, carbs, fat, sugar, sodium, gi, carb_ratio, fat_ratio, sugar_load]]
+
+        # 4. Ask the 5 ML Models to predict safety LIVE
+        results = {}
+        for disease, model in models.items():
+            prediction = model.predict(features)[0] 
+            results[disease.upper()] = prediction  # Will output 'Safe' or 'Risky'
+
+        return jsonify({
+            "status": "success", 
+            "message": "Live ML Prediction Complete",
+            "predictions": results
+        })
+        
+    except Exception as e:
+        return jsonify({"status": "error", "msg": str(e)})
+
+
 # --- HELPER FUNCTIONS (UPDATED FOR MULTI-DISEASE) ---
 def generate_smart_daily_plan(diseases, age, pref, region, target_cal):
     safe_foods = foods.copy()
@@ -79,7 +118,7 @@ def generate_smart_daily_plan(diseases, age, pref, region, target_cal):
         for disease in diseases:
             col_name = f"{disease.lower()}_label"
             if col_name in safe_foods.columns:
-                safe_foods = safe_foods[safe_foods[col_name] == 'Recommended']
+                safe_foods = safe_foods[safe_foods[col_name] == 'Safe']
     
     # 2. Filter by Age
     if age < 12: target = ["Kids", "All"]
@@ -162,6 +201,10 @@ def generate_smart_daily_plan(diseases, age, pref, region, target_cal):
             
     return {"breakfast": breakfast, "lunch": lunch, "dinner": dinner, "snack": snack}
 # --- ROUTES ---
+@app.route("/scanner")
+def scanner_page(): 
+    return send_from_directory(".", "scanner.html")
+
 @app.route("/")
 def home(): return send_from_directory(".", "login.html")
 
@@ -384,29 +427,20 @@ def download_weekly_pdf():
 # --- 🤖 CHATBOT (Standard Model) ---
 @app.route("/chat_ai", methods=["POST"])
 def chat_ai():
+    print("--- Chatbot API Hit ---")
     data = request.json
     user_query = data.get('query')
-    
+
     try:
-        # 🟢 CHANGED: 'gemini-1.5-flash' -> 'gemini-2.0-flash'
-        # This model was explicitly found in your test list!
-        model = genai.GenerativeModel('gemini-flash-latest')
-        
-        prompt = f"""
-        You are an expert Medical Nutritionist AI. 
-        The user asked: "{user_query}"
-        
-        Answer strictly about diet, nutrition, diseases (Diabetes, BP, etc.), and health. 
-        If the user asks about something else, politely refuse.
-        Keep the answer short (under 50 words) and helpful.
-        """
-        
-        response = model.generate_content(prompt)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+
+        response = model.generate_content(user_query)
+
         return jsonify({"reply": response.text})
-        
+
     except Exception as e:
-        print(f"❌ AI ERROR: {e}") 
-        return jsonify({"reply": "I am having trouble connecting. Please check the server terminal for details."})
+        print("ERROR:", e)
+        return jsonify({"reply": "Chatbot error: check server"})
     
 # --- 📜 NEW: GET USER HISTORY ---
 @app.route("/api/user_history", methods=["POST"])
